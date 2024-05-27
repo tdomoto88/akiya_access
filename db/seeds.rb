@@ -14,8 +14,8 @@ Property.destroy_all
 User.destroy_all
 puts "creating users..."
 
-user1 = {first_name: "Sebastian", last_name: "Burke" , dob: "01/03/2002" , email: "sebastian.b@gmail.com" }
-user2 = {first_name: "Mamun", last_name: "Jan" , dob: "15/08/2003" , email: "mamun.j@gmail.com" }
+user1 = {first_name: "Sebastian", last_name: "Burke" , dob: "01/03/2002" , email: "sebastian.b@gmail.com", password: "123456" }
+user2 = {first_name: "Mamun", last_name: "Jan" , dob: "15/08/2003" , email: "mamun.j@gmail.com", password: "123456" }
 
 [user1, user2].each do |attributes|
   user = User.create!(attributes)
