@@ -1,2 +1,11 @@
 <h1>Akiyas#show</h1>
 <p>Find me in app/views/akiyas/show.html.erb</p>
+<ul>
+<li><%= "$#{@property.price}" %></li>
+<li><%= "#{@property.bedrooms} bedrooms" %></li>
+<li><%= @property.address %></li>
+<li><%= "Built in #{@property.age}" %></li>
+<li><%= @property.description %></li>
+</ul>
+
+<%= link_to 'Make a booking', new_property_booking_path(@property) %>

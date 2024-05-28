@@ -1,4 +1,14 @@
 <h1>Akiyas#index</h1>
 <p>Find me in app/views/akiyas/index.html.erb</p>
 
-<%# YOU'VE BEEN HACKED MOTHERFUCKA!!!!! %>
+<ul>
+
+  <% @properties.each do |property| %>
+    <div class="card">
+    <li><%= link_to "$#{property.price}", property_path(property) %></li>
+    <li><%= "#{property.bedrooms} bedrooms" %></li>
+    <li><%= property.address %></li>
+    </div>
+  <% end %>
+
+</ul>

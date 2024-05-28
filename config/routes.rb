@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :properties do
     resources :bookings
   end
+  get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
   root to: "properties#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

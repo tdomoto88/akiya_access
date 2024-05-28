@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @properties = Property.find(params[:id])
+    @property = Property.find(params[:id])
   end
 
   def new
@@ -18,6 +18,9 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
+    property = Property.find(params[:id])
+    property.destroy
+    redirect_to root_path
   end
 
   private
