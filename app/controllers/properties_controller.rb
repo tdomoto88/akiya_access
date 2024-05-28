@@ -1,4 +1,4 @@
-class AkiyasController < ApplicationController
+class PropertiesController < ApplicationController
   def index
   end
 

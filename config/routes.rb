@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :akiyas do
+  resources :properties do
     resources :bookings
   end
   root to: "pages#home"
