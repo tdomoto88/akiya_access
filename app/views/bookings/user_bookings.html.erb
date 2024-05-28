@@ -1,0 +1,14 @@
+<h1>Bookings#user_bookings</h1>
+<p>Find me in app/views/bookings/index.html.erb</p>
+
+<ul>
+
+<% @bookings.each do |booking| %>
+<div class='card'>
+  <li><%= booking.property.address %></li>
+  <li><%= booking.check_in %></li>
+  <li><%= booking.check_out %></li>
+  <li><%= booking.guests %></li>
+</div>
+<% end %>
+</ul>

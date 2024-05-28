@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :properties do
     resources :bookings
   end
-  root to: "pages#home"
+  get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
+  root to: "properties#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
