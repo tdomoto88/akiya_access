@@ -1,14 +1,34 @@
-<h1>Akiyas#index</h1>
-<p>Find me in app/views/akiyas/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your Akiya 空き家</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Find your Akiya 空き家</h1>
+    <h2>Search, find and purchase your Dream Home in Japan</h2>
 
-<ul>
-
-  <% @properties.each do |property| %>
-    <div class="card">
-    <li><%= link_to "$#{property.price}", property_path(property) %></li>
-    <li><%= "#{property.bedrooms} bedrooms" %></li>
-    <li><%= property.address %></li>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button id="search-button">Search</button>
+        <button id="filter-button">Filter</button>
     </div>
-  <% end %>
+    <div id="search-results"></div>
 
-</ul>
+    <div class="card-container">
+        <% @properties.each do |property| %>
+            <div class="card">
+                <div class="card-content">
+                    <h3><%= link_to "$#{property.price}", property_path(property) %></h3>
+                    <p><%= "#{property.bedrooms} bedrooms" %></p>
+                    <p><%= property.address %></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
