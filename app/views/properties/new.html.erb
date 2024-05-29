@@ -1,2 +1,30 @@
 <h1>Akiyas#new</h1>
 <p>Find me in app/views/akiyas/new.html.erb</p>
+<%= simple_form_for [@property] do |f| %>
+  <div class="form-inputs">
+      <%= f.input :price,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "price" }%>
+      <%= f.input :age,
+                  required: true,
+                  input_html: { autocomplete: "age"}%>
+      <%= f.input :city,
+                  required: true,
+                  input_html: { autocomplete: "city"}%>
+      <%= f.input :address,
+                  required: true,
+                  input_html: { autocomplete: "address"}%>
+      <%= f.input :bedrooms,
+                  required: true,
+                  input_html: { autocomplete: "bedrooms"}%>
+       <%= f.input :description,
+                  required: true,
+                  input_html: { autocomplete: "description"}%>
+       <%= f.input :photo, as: :file %>
+
+  </div>
+  <div class="form-actions">
+      <%= f.button :submit, "Complete Booking" %>
+  </div>
+<% end %>

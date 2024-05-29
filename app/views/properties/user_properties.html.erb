@@ -1,0 +1,17 @@
+<h1>Your Properties</h1>
+
+<ul>
+
+<% @properties.each do |property| %>
+    <div class="card">
+    <% if property.photo.attached? %>
+      <%= cl_image_tag(property.photo.key,
+        width: 400, height: 300, crop: :fill) %>
+    <% end %>
+      <li><%= link_to "$#{property.price}", property_path(property) %></li>
+      <li><%= "#{property.bedrooms} bedrooms" %></li>
+      <li><%= property.address %></li>
+      <%= link_to 'Bookings', property_bookings_path(property) %>
+    </div>
+  <% end %>
+</ul>

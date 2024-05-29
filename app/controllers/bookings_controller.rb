@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
+
   def user_bookings
     @bookings = Booking.where(user: current_user)
+  end
+
+  def property_bookings
+    @bookings = Booking.where(property: )
   end
 
   def new

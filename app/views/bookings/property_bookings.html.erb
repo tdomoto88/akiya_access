@@ -1,0 +1,13 @@
+<h1>Bookings for this property</h1>
+
+<ul>
+
+<% @bookings.each do |booking| %>
+<div class='card'>
+  <li><%= booking.property.address %></li>
+  <li><%= booking.check_in %></li>
+  <li><%= booking.check_out %></li>
+  <li><%= booking.guests %></li>
+</div>
+<% end %>
+</ul>

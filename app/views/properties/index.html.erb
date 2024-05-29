@@ -17,10 +17,17 @@
     </div>
     <div id="search-results"></div>
 
+
+  
+
     <div class="card-container">
         <% @properties.each do |property| %>
             <div class="card">
                 <div class="card-content">
+                  <% if property.photo.attached? %>
+      <%= cl_image_tag(property.photo.key,
+        width: 400, height: 300, crop: :fill) %>
+                  <% end %>
                     <h3><%= link_to "$#{property.price}", property_path(property) %></h3>
                     <p><%= "#{property.bedrooms} bedrooms" %></p>
                     <p><%= property.address %></p>
