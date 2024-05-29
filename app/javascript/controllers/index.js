@@ -271,3 +271,8 @@ eagerLoadControllersFrom("controllers", application)
   color: #fff;
   font-family: 'Source Sans Pro';
 }
+
+$(document).ready(function() {
+  $('#property-carousel').carousel();
+});
+
