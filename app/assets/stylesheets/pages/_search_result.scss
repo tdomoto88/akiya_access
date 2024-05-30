@@ -1,0 +1,30 @@
+
+.property-grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-template-rows: repeat(2, auto);  /* Two rows */
+  gap: 20px; /* Space between cards */
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9; /* Light background color for visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc; /* Add border below the image */
+}
+
+#map {
+  height: 100vh;
+  border: 1px solid #ccc; /* Add border around the map */
+  position: sticky;
+  top: 0;
+}
