@@ -11,7 +11,7 @@
             <div class="carousel-caption left-caption">
               <% if @property.present? %>
                 <div class="caption-box">
-                  <h2 style="text-align: left;"><%= "$#{@property.price}" %></h2>
+                  <h2 style="text-align: left;"><%= number_to_currency(@property.price) %></h2>
                   <div>
                     <h3 style="text-align: left;"><%= "#{@property.bedrooms} Bedroom" %></h3>
                     <p style="text-align: left;"><%= @property.address %></p>
@@ -25,7 +25,7 @@
             <div class="carousel-caption left-caption">
               <% if @property.present? %>
                 <div class="caption-box">
-                  <h2 style="text-align: left;"><%= "$#{@property.price}" %></h2>
+                  <h2 style="text-align: left;"><%= number_to_currency(@property.price) %></h2>
                   <div>
                     <h3 style="text-align: left;"><%= "#{@property.bedrooms} Bedroom" %></h3>
                     <p style="text-align: left;"><%= @property.address %></p>

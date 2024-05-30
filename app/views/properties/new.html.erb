@@ -1,6 +1,8 @@
-<h1>Akiyas#new</h1>
-<p>Find me in app/views/akiyas/new.html.erb</p>
-<%= simple_form_for [@property] do |f| %>
+<div class="navbar navbar-lewagon"></div>
+
+<div class="content">
+  <div class="main-content">
+    <%= simple_form_for [@property] do |f| %>
   <div class="form-inputs">
       <%= f.input :price,
                   required: true,
@@ -12,6 +14,9 @@
       <%= f.input :city,
                   required: true,
                   input_html: { autocomplete: "city"}%>
+      <%= f.input :prefecture,
+                  required: true,
+                  input_html: { autocomplete: "prefecture"} %>
       <%= f.input :address,
                   required: true,
                   input_html: { autocomplete: "address"}%>
@@ -28,3 +33,51 @@
       <%= f.button :submit, "Complete Booking" %>
   </div>
 <% end %>
+
+  </div>
+
+  <div class="sidebar">
+    <h2>Fill in details of your new property</h2>
+    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Step One: Tell us about your place <br>
+        🏠 🛏
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Share some basic info,</strong> sucha as, where it is? how many bedrooms? how old it is? and how much you're willing to rent it out for? We'll figure out how many guests it can accomodate and <strong>we'll take care of the rest!</strong>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Step Two: Make it stand out! <br>
+        📸 💅
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Add a really strong image</strong> it will help you attract guests to stay at your akiya and make it stand out from the rest. <strong>Don't worry, we'll help you with that!</strong>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Step Three: Publish and start earning! <br>
+        🚪 💸
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>You're ready to go!</strong> Watch as many flock to become a guest in your akiya. You will aslo have the ability to choose whom you want to stay in your home.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
