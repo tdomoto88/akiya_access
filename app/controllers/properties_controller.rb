@@ -41,8 +41,10 @@ class PropertiesController < ApplicationController
 
 
   def search_result
-    @properties = Property.geocoded
-    @markers = @properties.map do |property|
+    # @properties = Property.geocoded.map
+    @properties = Property.all
+
+    @markers = @properties.geocoded.map do |property|
       {
         lat: property.latitude,
         lng: property.longitude,
