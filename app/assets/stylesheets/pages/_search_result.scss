@@ -3,8 +3,9 @@
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three columns */
-  grid-template-rows: repeat(2, auto);  /* Two rows */
-  gap: 20px; /* Space between cards */
+  //grid-template-rows: repeat(3, auto);  /* Two rows */
+  grid-gap: 30px; /* Space between cards */
+  padding: 15px;
 }
 
 .card {
@@ -26,5 +27,16 @@
   height: 100vh;
   border: 1px solid #ccc; /* Add border around the map */
   position: sticky;
-  top: 0;
+  top: 1px;
+  padding: 2px;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar .form-control {
+  flex-grow: 1;
+  margin-right: 10px;
 }

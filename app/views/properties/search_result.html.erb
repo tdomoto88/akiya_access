@@ -1,6 +1,13 @@
 <div class="row">
-  <!-- Left Column with Property Cards -->
-  <div class="col-6">
+
+  <!-- Left Column with Search Bar and Property Cards -->
+  <div class="col-7">
+    <!-- Search Bar -->
+    <form action="/properties" method="get" class="search-bar">
+      <input type="text" name="query" placeholder="Search properties" class="form-control">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
     <div class="property-grid">
       <% @properties.each do |property| %>
         <div class="card">
@@ -16,7 +23,7 @@
   </div>
 
   <!-- Right Column with Map -->
-  <div class="col-6">
+  <div class="col-5">
     <div id="map"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
