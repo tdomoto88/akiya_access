@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_30_092202) do
     t.bigint "property_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "accepted"
     t.index ["property_id"], name: "index_bookings_on_property_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
