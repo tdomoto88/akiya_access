@@ -25,7 +25,7 @@ end
 puts "Creating properties..."
 
 property = Property.new(
-  price: 19.111,
+  price: 19111,
   age: 1983,
   city: "Nagano",
   prefecture: "Kyoto",
@@ -37,12 +37,14 @@ property = Property.new(
 
 property.photo.attach(io: URI.open('https://miro.medium.com/v2/resize:fit:1100/format:webp/1*MiIHXrnOPuwXCwL3yE3iUA.png'), filename: "akiya.png", content_type: "image/png") # add the file
 property.save!
-
+puts "first property done"
 property = Property.new(
-  price: 11.466,
+  price: 11466,
+
   age: 1926,
   city: "Tokyo",
   prefecture: "Kyoto",
+
   address: "281 Shimonojō, Fukuchiyama, Kyoto 620-0211, Japan",
   bedrooms: 3,
   description: "This 130-year-old house is nestled in a tranquil residential neighborhood and boasts a detached building and a warehouse. The detached building spans 1,257 square feet, and the property offers ample parking for five kei cars.",
@@ -51,18 +53,43 @@ property = Property.new(
 
 property.photo.attach(io: URI.open('https://tokyoportfolio.com/wp-content/uploads/2023/10/akiyas-in-Japan.jpg'), filename: "akiya2.png", content_type: "image/png")
 property.save!
-
+puts "2nd property done"
 property = Property.new(
-  price: 22.296,
+  price: 22296,
   age: 1965,
   city: "Kyoto",
   prefecture: "Kyoto",
   address: "Kyotango, Kyoto 629-3101, Japan",
+
   bedrooms: 8,
   description: "This 8-bedroom, 1-kitchen house is located in a quiet area near the sea. The wooden, 2-story building is 58 years old and is a short 20-minute walk from Amino Station on the Amino-cho Line.",
   user: User.first)
 
   property.photo.attach(io: URI.open('https://i0.wp.com/tstoaddicts.com/wp-content/uploads/2017/02/tatami-prison-mount-fuji-painting-simpsons.jpg?ssl=1'), filename: "akiya3.png", content_type: "image/png")
   property.save!
+
+  property = Property.new(
+  price: 15858,
+  age: 1971,
+  city: "Kyoto",
+  address: "Tanaka Asukaicho, Kyoto, 606-8304 Japan",
+  bedrooms: 1,
+  description: "This 1-bedroom condo is located in Tanaka Asukaimachi, Sakyo Ward, Kyoto City, Kyoto Prefecture. The 51-year-old steel-frame building features 1 bedroom, 1 dining room, and 1 kitchen. It is a 6-minute walk from Tanaka Station on the Eizan Electric Railway Eizan Main Line.",
+  user: User.first)
+
+  property.photo.attach(io: URI.open('https://img4.athome.jp/image_files/path/_EUvG6gTHD3SpEkJQtucfQ==.jpeg'), filename: "akiya4.png", content_type: "image/png")
+  property.save!
+
+  property = Property.new(
+  price: 10783,
+  age: 1933,
+  city: "Osaka",
+  address: "4 Hayashiji, Ikuno-ku, Osaka-shi, Osaka Prefecture",
+  bedrooms: 3,
+  description: "This 3-bedroom, 1-living room, 1-dining room, and 1-kitchen wooden house is 89 years old and is located in Ikuno-ku, Osaka. The house is a leasehold property with a new 20-year lease period. The house is conveniently located near shopping and has public transportation nearby including the JR Osaka Loop Line Teradamachi Station which is a 16-minute walk away.",
+  user: User.first
+)
+property.photo.attach(io: URI.open('https://img01.suumo.com/front/gazo/bukken/060/N010000/img/922/74286922/74286922_0006.jpg'), filename: "akiya5.png", content_type: "image/png") # add the file
+property.save!
 
 puts "Finished!"
