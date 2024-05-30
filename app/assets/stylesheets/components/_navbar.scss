@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(122, 122, 122, 0.436);
+  font-size: larger;
+  color: rgb(56, 92, 57);
+  border-radius: 5px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +12,37 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.link.hover {
+  color: rgb(34, 104, 36);
+}
+
+.booking-link {
+  color: whitesmoke;
+}
+
+.button-outline:hover
+{
+background-color: #edede5dd;
+color: green;
+transition: 1s;
+border-radius: 5%;
+padding: 4px;
+}
+
+.button-outline {
+  color: whitesmoke;
+  background-color: rgba(162, 162, 162, 0.826);
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bolder;
+  text-decoration: none;
+  display:flex;
+  justify-content: center;
+}
+
+.logo {
+  margin: 10px;
+  border-radius: 5px;
 }

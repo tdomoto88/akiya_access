@@ -10,8 +10,12 @@ body {
   background-size: cover; /* Ensures the image covers the entire background */
   text-align: center;
 }
+h2 {
+  margin: 0 0 20px;
+  font-size: smaller;
+}
 
-h1, h2 {
+h1 {
   margin: 0 0 20px;
 }
 
@@ -56,16 +60,24 @@ button {
   display: flex;
   justify-content: space-around; /* Distribute cards equally */
   flex-wrap: wrap; /* Allow cards to wrap to the next line if necessary */
-  gap: 20px; /* Space between the cards */
+  gap: 20px;
+  flex-direction: row-reverse;
+  align-content: flex-end;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  background-color: rgba(122, 122, 122, 0.514);
+  width: 100%;
+  margin-top: 100px;
 }
 
 .card {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.911);
   border: 2px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  width: 300px;
   padding: 20px;
+  margin: 20px;
   text-align: left;
   flex: 1 0 21%; /* Flex properties to adjust card size */
   max-width: 250px; /* Ensure the card does not exceed this width */
