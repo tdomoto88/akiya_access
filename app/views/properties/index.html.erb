@@ -28,7 +28,7 @@
       <%= cl_image_tag(property.photo.key,
         width: 400, height: 300, crop: :fill) %>
                   <% end %>
-                    <h3><%= link_to "$#{property.price}", new_property_booking_path(property) %></h3>
+                    <h3><%= link_to "$#{property.price}", property_path(property) %></h3>
                     <p><%= "#{property.bedrooms} bedrooms" %></p>
                     <p><%= property.city %></p>
                 </div>
