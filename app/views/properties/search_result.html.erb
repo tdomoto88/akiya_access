@@ -6,7 +6,7 @@
         <div class="card">
           <img src="https://via.placeholder.com/300x200" alt="Property Image">
           <ul>
-            <li><%= link_to "$#{property.price}", property_path(property) %></li>
+            <li><%= link_to number_to_currency(property.price), new_property_booking_path(property) %></li>
             <li><%= "#{property.bedrooms} bedrooms" %></li>
             <li><%= property.address %></li>
           </ul>
