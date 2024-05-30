@@ -1,52 +1,60 @@
-<h1>Dashboard</h1>
 
-<h2>Your Bookings</h2>
-<p>Find me in app/views/bookings/index.html.erb</p>
 
-<div class="booking-card">
-  <ul>
-  <% @bookings.each do |booking| %>
+  <h1>Dashboard</h1>
+
+  <h2>Your Bookings</h2>
+
+
+  <div class="booking-card">
+
+    <% @bookings.each do |booking| %>
+    <div class='card'>
+      <li><%= booking.property.address %></li>
+      <li><%= booking.check_in %> check in date</li>
+      <li><%= booking.check_out %> check out date</li>
+      <li><%= booking.guests %> guests</li>
+    </div>
+    <% end %>
+  </div>
+
+
+
+<div class="owner">
+ <div class="p">
+  <h2 class="p">Your Properties</h2>
+  <div class="properties">
+
+  <% @properties.each do |property| %>
+      <div class="card">
+      <% if property.photo.attached? %>
+        <%= cl_image_tag(property.photo.key,
+          width: 400, height: 300, crop: :fill) %>
+      <% end %>
+        <li><%= link_to "$#{property.price}", property_path(property) %></li>
+        <li><%= "#{property.bedrooms} bedrooms" %></li>
+        <li><%= property.address %></li>
+        <%= link_to 'Bookings', property_bookings_path(property) %>
+      </div>
+    <% end %>
+
+  </div>
+ </div>
+  <div class="pending">
+  <h2>Property Bookings</h2>
+
+  <% @bookings_pending.each do |pending| %>
   <div class='card'>
-    <li><%= booking.property.address %></li>
-    <li><%= booking.check_in %> check in date</li>
-    <li><%= booking.check_out %> check out date</li>
-    <li><%= booking.guests %> guests</li>
+    <li><%= pending.property.address %></li>
+    <li><%= pending.check_in %> check in date</li>
+    <li><%= pending.check_out %> check out date</li>
+    <li><%= pending.guests %> guests</li>
+    <% unless pending.accepted == true %>
+      <button><%= link_to 'Confirm Booking', edit_property_booking_path(pending.property, pending) %></button>
+    <% else %>
+        <li>Booking Accepted</li>
+    <% end %>
   </div>
   <% end %>
-  </ul>
-</div>
-<h2>Your Properties</h2>
 
-<ul>
-<div class="owner">
-<% @properties.each do |property| %>
-    <div class="card">
-    <% if property.photo.attached? %>
-      <%= cl_image_tag(property.photo.key,
-        width: 400, height: 300, crop: :fill) %>
-    <% end %>
-      <li><%= link_to "$#{property.price}", property_path(property) %></li>
-      <li><%= "#{property.bedrooms} bedrooms" %></li>
-      <li><%= property.address %></li>
-      <%= link_to 'Bookings', property_bookings_path(property) %>
-    </div>
-  <% end %>
-</ul>
-
-<ul>
-
-<% @bookings_pending.each do |pending| %>
-<div class='card'>
-  <li><%= pending.property.address %></li>
-  <li><%= pending.check_in %> check in date</li>
-  <li><%= pending.check_out %> check out date</li>
-  <li><%= pending.guests %> guests</li>
-  <% unless pending.accepted == true %>
-    <button><%= link_to 'Confirm Booking', edit_property_booking_path(pending.property, pending) %></button>
-  <% else %>
-      <li>Booking Accepted</li>
-  <% end %>
-</div>
-<% end %>
-</ul>
+  </div>
 </div>
