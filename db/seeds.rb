@@ -65,5 +65,4 @@ property = Property.new(
   property.photo.attach(io: URI.open('https://i0.wp.com/tstoaddicts.com/wp-content/uploads/2017/02/tatami-prison-mount-fuji-painting-simpsons.jpg?ssl=1'), filename: "akiya3.png", content_type: "image/png")
   property.save!
 
-
 puts "Finished!"
