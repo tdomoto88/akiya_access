@@ -12,8 +12,11 @@ class PropertiesController < ApplicationController
     end
   end
 
-  def show
-    @property = Property.find(params[:id])
+  def search_result
+    @properties = Property.all
+    if params[:query].present?
+      @properties = @properties.where(city: params[:query])
+    end
   end
 
   def new
@@ -43,6 +46,9 @@ class PropertiesController < ApplicationController
   def search_result
     # @properties = Property.geocoded.map
     @properties = Property.all
+    if params[:query].present?
+      @properties = @properties.where(city: params[:query])
+    end
 
     @markers = @properties.geocoded.map do |property|
       {
