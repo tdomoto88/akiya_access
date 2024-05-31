@@ -13,6 +13,11 @@
       <li><%= booking.check_in %> check in date</li>
       <li><%= booking.check_out %> check out date</li>
       <li><%= booking.guests %> guests</li>
+      <% unless booking.accepted == true %>
+      <li>Booking Pending</li>
+    <% else %>
+        <li>Booking Accepted</li>
+    <% end %>
     </div>
     <% end %>
   </div>
@@ -30,10 +35,10 @@
         <%= cl_image_tag(property.photo.key,
           width: 400, height: 300, crop: :fill) %>
       <% end %>
-        <li><%= link_to "$#{property.price}", property_path(property) %></li>
+        <li><%= "$#{property.price}" %></li>
         <li><%= "#{property.bedrooms} bedrooms" %></li>
         <li><%= property.address %></li>
-        <%= link_to 'Bookings', property_bookings_path(property) %>
+
       </div>
     <% end %>
 
