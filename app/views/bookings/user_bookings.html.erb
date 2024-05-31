@@ -27,9 +27,11 @@
         <%= cl_image_tag(property.photo.key,
           width: 400, height: 300, crop: :fill) %>
       <% end %>
+
         <p><%= number_to_currency(property.price) %></p>
         <p><%= "#{property.bedrooms} bedrooms" %></p>
         <p><%= property.address %></p>
+        <button><%= link_to "Remove property", property_path(property), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'} %></button>
       </div>
     <% end %>
 
