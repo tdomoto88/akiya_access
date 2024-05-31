@@ -56,7 +56,7 @@ properties = [
     price: 15858, age: 1971, city: "Kyoto", prefecture: "Kyoto",
     address: "Tanaka Asukaicho, Kyoto, 606-8304 Japan", bedrooms: 1,
     description: "This 1-bedroom condo is located in Tanaka Asukaimachi, Sakyo Ward, Kyoto City, Kyoto Prefecture. The 51-year-old steel-frame building features 1 bedroom, 1 dining room, and 1 kitchen. It is a 6-minute walk from Tanaka Station on the Eizan Electric Railway Eizan Main Line.",
-    user: User.first,
+    user: User.last,
     photo_url: 'https://img4.athome.jp/image_files/path/_EUvG6gTHD3SpEkJQtucfQ==.jpeg',
     photo_filename: "akiya4.png"
   },
@@ -72,7 +72,7 @@ properties = [
     price: 19029, age: 1983, city: "Nantan", prefecture: "Kyoto",
     address: "Mitano Otana, Miyama-cho, Nantan City, Kyoto Prefecture", bedrooms: 5,
     description: "This 5-bedroom, 1-dining room, and 1-kitchen house is nestled amidst lush greenery, offering a tranquil escape for nature enthusiasts. The 39-year-old wooden home features public water and a convenient parking space. It is a short 6-minute walk from the Kawatani stop on the Nantan City Bus and a 15.8 km drive from the Wachi Station on the JR Sanin Main Line.",
-    user: User.first,
+    user: User.last,
     photo_url: 'https://img01.suumo.com/front/gazo/bukken/060/N010000/img/427/70078427/70078427_0006.jpg',
     photo_filename: "akiya6.png"
   },
@@ -88,7 +88,7 @@ properties = [
     price: 12686, age: 1969, city: "Hino", prefecture: "Tottori",
     address: "Kurosaka, Hino-cho, Hino-gun, Tottori Prefecture", bedrooms: 5,
     description: "This 5-bedroom, 1-kitchen house is a 5-minute walk from Kurosaka Station on the JR Hoki Line. The 54-year-old wooden building has 2 floors. The Hino River is right in front of the property, offering opportunities for fishing, kayaking, gardening, pottery, or art in the garden. The price has been reduced!.",
-    user: User.first,
+    user: User.last,
     photo_url: 'https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135911%2Fsale%2F203%2F2%2F3%2Fievn.jpg&width=1024&height=1024',
     photo_filename: "akiya8.png"
   },
@@ -104,7 +104,7 @@ properties = [
     price: 302569, age: 2021, city: "Nishinomiya", prefecture: "Hyogo",
     address: "Mimasaka-cho, Nishinomiya City, Hyogo Prefecture", bedrooms: 4,
     description: "This 5-bedroom, 1-kitchen house is a 5-minute walk from Kurosaka Station on the JR Hoki Line. The 54-year-old wooden building has 2 floors. The Hino River is right in front of the property, offering opportunities for fishing, kayaking, gardening, pottery, or art in the garden. The price has been reduced!.",
-    user: User.first,
+    user: User.last,
     photo_url: 'https://img01.suumo.com/front/gazo/bukken/060/N010000/img/238/73351238/73351238_0003.jpg',
     photo_filename: "akiya10.png"
   }
