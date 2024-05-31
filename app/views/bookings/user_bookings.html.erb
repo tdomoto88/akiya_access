@@ -38,7 +38,7 @@
         <li><%= "$#{property.price}" %></li>
         <li><%= "#{property.bedrooms} bedrooms" %></li>
         <li><%= property.address %></li>
-
+        <button><%= link_to "Remove property", property_path(property), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'} %></button>
       </div>
     <% end %>
 
