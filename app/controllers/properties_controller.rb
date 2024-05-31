@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @properties = Property.all
     @markers = @properties.geocoded.map do |property|
@@ -20,9 +21,12 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    @property.user = current_user
-    @property.save
-    redirect_to user_bookings_path
+    @property.user=current_user
+    if @property.save
+      redirect_to user_bookings_path, notice: 'Property was successfully created.'
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -31,12 +35,9 @@ class PropertiesController < ApplicationController
     redirect_to root_path
   end
 
-
   def user_properties
     @properties = Property.where(user: current_user)
   end
-
-
 
   def search_result
     # @properties = Property.geocoded.map
@@ -60,6 +61,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:price, :age, :city, :address, :bedrooms, :description, :user_id, :photo)
+    params.require(:property).permit(:price, :age, :city, :prefecture, :address, :bedrooms, :description, :photo)
   end
 end
