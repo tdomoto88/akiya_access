@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @property = Property.find(params[:property_id])
     @booking.property = @property
+    @booking.accepted = nil
     @booking.user = current_user
     @booking.save
     redirect_to user_bookings_path
@@ -37,6 +38,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:check_in, :check_out, :guests, :user_id, :property_id, :accepted)
+    params.require(:booking).permit(:check_in, :check_out, :guests, :user_id, :property_id)
   end
 end
