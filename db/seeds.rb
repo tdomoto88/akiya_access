@@ -17,7 +17,7 @@ puts "Creating users..."
 users = [
   { first_name: "Sebastian", last_name: "Burke", dob: "01/03/2002", email: "sebastian.b@gmail.com", password: "123456" },
   { first_name: "Mamun", last_name: "Jan", dob: "15/08/2003", email: "mamun.j@gmail.com", password: "123456" },
-  { first_name: "New", last_name: "User", dob: "15/08/2003", email: "abc@gmail.com", password: "123456" }
+  { first_name: "John", last_name: "Doe", dob: "15/08/2003", email: "abc@gmail.com", password: "123456" }
 ]
 
 users.each do |attributes|
