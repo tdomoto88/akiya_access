@@ -11,7 +11,8 @@
     <div class="property-grid">
       <% @properties.each do |property| %>
         <div class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Property Image">
+        <%= cl_image_tag(property.photo.key,
+      width: 300, height: 200, crop: :fill) %>
           <ul>
             <li><%= link_to number_to_currency(property.price), new_property_booking_path(property) %></li>
             <li><%= "#{property.bedrooms} bedrooms" %></li>
