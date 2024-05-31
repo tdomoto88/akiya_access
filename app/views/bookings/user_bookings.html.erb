@@ -44,22 +44,28 @@
 
   </div>
  </div>
-  <div class="pending">
-  <h2>Property Bookings</h2>
-
-  <% @bookings_pending.each do |pending| %>
-  <div class='card'>
-    <li><%= pending.property.address %></li>
-    <li><%= pending.check_in %> check in date</li>
-    <li><%= pending.check_out %> check out date</li>
-    <li><%= pending.guests %> guests</li>
-    <% unless pending.accepted == true %>
-      <button><%= link_to 'Confirm Booking', edit_property_booking_path(pending.property, pending) %></button>
-    <% else %>
-        <li>Booking Accepted</li>
-    <% end %>
-  </div>
-  <% end %>
-
-  </div>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pending-tab" data-bs-toggle="tab" href="#pending" role="tab" aria-controls="pending" aria-selected="true">Pending</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="accepted-tab" data-bs-toggle="tab" href="#accepted" role="tab" aria-controls="accepted" aria-selected="false">Accepted</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+        <div class="pending">
+          <% @pending_bookings.each do |booking| %>
+            <%= render 'booking', booking: booking %>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+        <div class="accepted">
+          <% @accepted_bookings.each do |booking| %>
+            <%= render 'booking', booking: booking %>
+          <% end %>
+        </div>
+      </div>
 </div>

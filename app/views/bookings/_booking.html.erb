@@ -1,0 +1,9 @@
+<div class='card'>
+  <h3>From <%= booking.user.first_name %></h3>
+  <p><i class="fa-solid fa-house"></i><%= booking.property.address %></p>
+  <p><i class="fa-regular fa-calendar-days"></i> <%= booking.check_in %> / <%= booking.check_out %></p>
+  <p><i class="fa-solid fa-users"></i>  <%= booking.guests %></p>
+  <% unless booking.accepted == true %>
+  <button><%= link_to 'Confirm Booking', edit_property_booking_path(booking.property, booking) %></button>
+  <% end %>
+</div>
