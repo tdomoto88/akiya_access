@@ -3,7 +3,8 @@ class BookingsController < ApplicationController
   def user_bookings
     @bookings = Booking.where(user: current_user)
     @properties = Property.where(user: current_user)
-    @bookings_pending =  Booking.joins(:property).where("properties.user_id=?", current_user.id)
+    @pending_bookings = current_user.bookings_as_owner.where(accepted: nil)
+    @accepted_bookings =  current_user.bookings_as_owner.where(accepted: true)
   end
 
   def property_bookings
