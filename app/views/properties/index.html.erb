@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find your Akiya 空き家</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Find your Akiya 空き家</h1>
+ <h1>Find your Akiya 空き家</h1>
     <h2>Search, find and purchase your Dream Home in Japan</h2>
 
     <div class="search-container">
@@ -22,21 +13,43 @@
 
     <div class="card-container">
         <% @properties.each do |property| %>
-            <div class="card">
-                <div class="card-content">
-                  <% if property.photo.attached? %>
-      <%= cl_image_tag(property.photo.key,
-        width: 400, height: 300, crop: :fill) %>
-                  <% end %>
-                    <h3><%= number_to_currency(property.price) %></h3>
-                    <p><%= "#{property.bedrooms} bedrooms" %></p>
-                    <p><%= property.city %></p>
-                    <p class="btn btn-outline-primary"><%= link_to "More info", new_property_booking_path(property) %></p>
-                </div>
-            </div>
         <% end %>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <% @properties.each_slice(3) do |properties| %>
+        <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="2000">
+          <div class="card-container">
+            <% properties.each do |property| %>
+              <% if property.photo.attached? %>
+              <div class="card">
+                  <div class="card-content">
+                      <%= cl_image_tag(property.photo.key, width: 400, height: 300, crop: :fill) %>
+                      <h3><%= number_to_currency(property.price) %></h3>
+                      <p><%= "#{property.bedrooms} bedrooms" %></p>
+                      <p><%= property.city %></p>
+                      <p><%= link_to "More info", new_property_booking_path(property), class:"button-outline" %></p>
+                  </div>
+                </div>
+            <% end %>
+      <% end %>
+          </div>
+        </div>
+    <% end %>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
