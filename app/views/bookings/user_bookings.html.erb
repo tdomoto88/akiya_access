@@ -1,10 +1,6 @@
-  <h1>Dashboard</h1>
-
-  <h2>Your Bookings</h2>
-
-
+<h1>Dashboard</h1>
+<h2>Your Bookings</h2>
   <div class="booking-card">
-
     <% @bookings.each do |booking| %>
     <div class='card'>
       <li><%= booking.property.address %></li>
@@ -20,8 +16,6 @@
     <% end %>
   </div>
 
-
-
 <div class="owner">
  <div class="p">
   <h2 class="p">Your Properties</h2>
@@ -36,7 +30,6 @@
         <p><%= number_to_currency(property.price) %></p>
         <p><%= "#{property.bedrooms} bedrooms" %></p>
         <p><%= property.address %></p>
-
       </div>
     <% end %>
 
