@@ -12,12 +12,7 @@ class PropertiesController < ApplicationController
     end
   end
 
-  def search_result
-    @properties = Property.all
-    if params[:query].present?
-      @properties = @properties.where(city: params[:query])
-    end
-  end
+
 
   def new
     @property = Property.new
@@ -27,7 +22,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user = current_user
     @property.save
-    redirect_to root_path
+    redirect_to user_bookings_path
   end
 
   def destroy
@@ -47,7 +42,8 @@ class PropertiesController < ApplicationController
     # @properties = Property.geocoded.map
     @properties = Property.all
     if params[:query].present?
-      @properties = @properties.where(city: params[:query])
+      sql_subquery = "city ILIKE :query OR prefecture ILIKE :query"
+      @properties = @properties.where(sql_subquery, query: "%#{params[:query]}%")
     end
 
     @markers = @properties.geocoded.map do |property|
