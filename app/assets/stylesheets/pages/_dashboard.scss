@@ -94,6 +94,23 @@ label {
   color: rgb(17, 203, 17);
   font-weight: bold;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.9);
+  transition-duration: 1s;
+}
+
+.nav-link {
+  flex: 1;
+  color: whitesmoke;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.nav-link:hover {
+  color: rgb(17, 203, 17);
+  font-weight: bold;
+  border-radius: 5px;
   padding: 5px;
   margin: 5px;
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.9);
