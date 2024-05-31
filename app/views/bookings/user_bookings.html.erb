@@ -31,7 +31,7 @@
         <p><%= number_to_currency(property.price) %></p>
         <p><%= "#{property.bedrooms} bedrooms" %></p>
         <p><%= property.address %></p>
-        <button><%= link_to "Remove property", property_path(property), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'} %></button>
+        <button><%= link_to "Remove property", property_path(property), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class:"button-outline" %></button>
       </div>
     <% end %>
 
