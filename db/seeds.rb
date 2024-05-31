@@ -30,7 +30,7 @@ puts "Creating properties..."
 properties = [
   {
     price: 19111, age: 1983, city: "Nagano", prefecture: "Kyoto",
-    address: "Miyamacho Mitsuno, Nantan, Kyoto 601-0773, Japan", bedrooms: 5,
+    address: "Nantan, Kyoto 601-0773, Japan", bedrooms: 5,
     description: "This 5-bedroom, 1-dining room, and 1-kitchen house is nestled amidst lush greenery, offering a tranquil escape for nature enthusiasts. The 39-year-old wooden home features public water and a convenient parking space. It is a short 6-minute walk from the Kawatani stop on the Nantan City Bus and a 15.8 km drive from the Wachi Station on the JR Sanin Main Line.",
     user: User.first,
     photo_url: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*MiIHXrnOPuwXCwL3yE3iUA.png',
@@ -38,7 +38,7 @@ properties = [
   },
   {
     price: 11466, age: 1926, city: "Kyoto", prefecture: "Kyoto",
-    address: "281 Shimonojō, Fukuchiyama, Kyoto 620-0211, Japan", bedrooms: 3,
+    address: "Fukuchiyama, Kyoto 620-0211, Japan", bedrooms: 3,
     description: "This 130-year-old house is nestled in a tranquil residential neighborhood and boasts a detached building and a warehouse. The detached building spans 1,257 square feet, and the property offers ample parking for five kei cars.",
     user: User.last,
     photo_url: 'https://tokyoportfolio.com/wp-content/uploads/2023/10/akiyas-in-Japan.jpg',
@@ -49,7 +49,7 @@ properties = [
     address: "Kyotango, Kyoto 629-3101, Japan", bedrooms: 8,
     description: "This 8-bedroom, 1-kitchen house is located in a quiet area near the sea. The wooden, 2-story building is 58 years old and is a short 20-minute walk from Amino Station on the Amino-cho Line.",
     user: User.first,
-    photo_url: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fzenbird.media%2Freusing-japans-vacant-akiya-homes-for-sustainable-living%2F&psig=AOvVaw0ZR0h34X1flBeqj4F3EVIm&ust=1717130169190000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJDH58DGtIYDFQAAAAAdAAAAABAE',
+    photo_url: 'https://i0.wp.com/zenbird.media/wp-content/uploads/2021/05/akiya_top.jpg?w=1000&ssl=1',
     photo_filename: "akiya3.png"
   },
   {
@@ -70,7 +70,7 @@ properties = [
   },
   {
     price: 19029, age: 1983, city: "Nantan", prefecture: "Kyoto",
-    address: "Mitano Otana, Miyama-cho, Nantan City, Kyoto Prefecture", bedrooms: 5,
+    address: "Nantan, Kyoto Prefecture", bedrooms: 5,
     description: "This 5-bedroom, 1-dining room, and 1-kitchen house is nestled amidst lush greenery, offering a tranquil escape for nature enthusiasts. The 39-year-old wooden home features public water and a convenient parking space. It is a short 6-minute walk from the Kawatani stop on the Nantan City Bus and a 15.8 km drive from the Wachi Station on the JR Sanin Main Line.",
     user: User.last,
     photo_url: 'https://img01.suumo.com/front/gazo/bukken/060/N010000/img/427/70078427/70078427_0006.jpg',
@@ -78,7 +78,7 @@ properties = [
   },
   {
     price: 14589, age: 1955, city: "Moriguchi", prefecture: "Osaka",
-    address: "3, Yakumo Kita-cho, Moriguchi City, Osaka Prefecture", bedrooms: 4,
+    address: "Moriguchi City, Osaka Prefecture", bedrooms: 4,
     description: "This 68-year-old house is situated in a tranquil residential neighborhood. It boasts a generous balcony, four Japanese-style rooms (4DK), and is conveniently located near elementary and junior high schools. The property is serviced by public water, public sewer, and individual liquified petroleum gas. While parking is not available, the house's flat layout ensures ease of living.",
     user: User.first,
     photo_url: 'https://img01.suumo.com/front/gazo/bukken/060/N010000/img/021/72401021/72401021_0012.jpg',
@@ -94,7 +94,7 @@ properties = [
   },
   {
     price: 748493, age: 1992, city: "Osaka", prefecture: "Osaka",
-    address: "3-7-4 Higashinakamoto, Higashinari-ku, Osaka-shi, Osaka Prefecture", bedrooms: 5,
+    address: "Higashinakamoto, Higashinari-ku, Osaka-shi, Osaka Prefecture", bedrooms: 5,
     description: "This 5-bedroom, 1-kitchen house is a 5-minute walk from Kurosaka Station on the JR Hoki Line. The 54-year-old wooden building has 2 floors. The Hino River is right in front of the property, offering opportunities for fishing, kayaking, gardening, pottery, or art in the garden. The price has been reduced!.",
     user: User.first,
     photo_url: 'https://img01.suumo.com/front/gazo/bukken/060/N010000/img/432/73110432/73110432_0001.jpg',
@@ -102,7 +102,7 @@ properties = [
   },
   {
     price: 302569, age: 2021, city: "Nishinomiya", prefecture: "Hyogo",
-    address: "Mimasaka-cho, Nishinomiya City, Hyogo Prefecture", bedrooms: 4,
+    address: "Nishinomiya City, Hyogo Prefecture", bedrooms: 4,
     description: "This 5-bedroom, 1-kitchen house is a 5-minute walk from Kurosaka Station on the JR Hoki Line. The 54-year-old wooden building has 2 floors. The Hino River is right in front of the property, offering opportunities for fishing, kayaking, gardening, pottery, or art in the garden. The price has been reduced!.",
     user: User.last,
     photo_url: 'https://img01.suumo.com/front/gazo/bukken/060/N010000/img/238/73351238/73351238_0003.jpg',
