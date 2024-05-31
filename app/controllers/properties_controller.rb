@@ -13,12 +13,7 @@ class PropertiesController < ApplicationController
     end
   end
 
-  def search_result
-    @properties = Property.all
-    if params[:query].present?
-      @properties = @properties.where(city: params[:query])
-    end
-  end
+
 
   def new
     @property = Property.new
@@ -48,7 +43,8 @@ class PropertiesController < ApplicationController
     # @properties = Property.geocoded.map
     @properties = Property.all
     if params[:query].present?
-      @properties = @properties.where(city: params[:query])
+      sql_subquery = "city ILIKE :query OR prefecture ILIKE :query"
+      @properties = @properties.where(sql_subquery, query: "%#{params[:query]}%")
     end
 
     @markers = @properties.geocoded.map do |property|

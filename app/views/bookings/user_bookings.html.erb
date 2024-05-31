@@ -27,15 +27,16 @@
         <%= cl_image_tag(property.photo.key,
           width: 400, height: 300, crop: :fill) %>
       <% end %>
-        <li><%= "$#{property.price}" %></li>
-        <li><%= "#{property.bedrooms} bedrooms" %></li>
-        <li><%= property.address %></li>
+        <p><%= number_to_currency(property.price) %></p>
+        <p><%= "#{property.bedrooms} bedrooms" %></p>
+        <p><%= property.address %></p>
       </div>
     <% end %>
 
   </div>
  </div>
   <div class="container">
+    <h2>Booking requests</h2>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="pending-tab" data-bs-toggle="tab" href="#pending" role="tab" aria-controls="pending" aria-selected="true">Pending</a>
@@ -59,4 +60,5 @@
           <% end %>
         </div>
       </div>
+</div>
 </div>
