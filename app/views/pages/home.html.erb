@@ -18,15 +18,15 @@
 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <% @properties.each_slice(3) do |properties| %>
-      <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="2000">
+      <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="5000">
         <div class="card-container">
           <% properties.each do |property| %>
             <% if property.photo.attached? %>
               <div class="card">
                 <div class="card-content">
                   <%= cl_image_tag(property.photo.key, width: 400, height: 300, crop: :fill) %>
-                  <h3><%= number_to_currency(property.price) %></h3>
-                  <p><%= "#{property.bedrooms} bedrooms" %></p>
+
+                  <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
                   <p><%= property.city %></p>
                   <p><%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %></p>
                 </div>

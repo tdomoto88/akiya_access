@@ -15,7 +15,7 @@ class ConsultationsController < ApplicationController
     @consultation.property = @property
     @consultation.user = current_user
     @consultation.save
-    redirect_to property_consultations_path
+    redirect_to consultations_path
   end
 
   def edit

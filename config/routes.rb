@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'favourites/index'
   get 'favourites/create'
   get 'favourites/destroy'
-  get 'consultations/index'
+  get 'consultations/index', to: 'consultations#index', as: 'consultations'
   get 'consultations/new'
   get 'consultations/create'
   get 'consultations/edit'
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'consultations/destroy'
   devise_for :users
   resources :properties do
-    resources :consultations
+    resources :consultations, except: :index
   end
   get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
   get '/user_properties', to: 'properties#user_properties', as: 'user_properties'
