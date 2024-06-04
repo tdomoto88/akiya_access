@@ -59,7 +59,7 @@
   <div style="width: 33%; padding: 20px;">
     <%= simple_form_for [@property, @consultation] do |f| %>
       <div class="form-inputs">
-        <%= f.input :date, required: true, autofocus: true %>
+        <%= f.input :date, label: 'Consultation Time', required: true, autofocus: true %>
 
       </div>
       <div class="form-actions">

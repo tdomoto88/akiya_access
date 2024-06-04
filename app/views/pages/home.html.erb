@@ -25,9 +25,9 @@
               <div class="card">
                 <div class="card-content">
                   <%= cl_image_tag(property.photo.key, width: 400, height: 300, crop: :fill) %>
-
+                  <p><%= property.city %>, <%= property.prefecture %></p>
                   <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-                  <p><%= property.city %></p>
+
                   <p><%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %></p>
                 </div>
               </div>

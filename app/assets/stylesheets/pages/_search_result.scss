@@ -2,7 +2,7 @@
 .property-grid {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-template-columns: repeat(2, 1fr); /* Three columns */
   //grid-template-rows: repeat(3, auto);  /* Two rows */
   grid-gap: 30px; /* Space between cards */
   padding: 15px;
