@@ -28,7 +28,7 @@
                   <h3><%= number_to_currency(property.price) %></h3>
                   <p><%= "#{property.bedrooms} bedrooms" %></p>
                   <p><%= property.city %></p>
-                  <p><%= link_to "More info", new_property_booking_path(property), class:"button-outline" %></p>
+                  <p><%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %></p>
                 </div>
               </div>
             <% end %>

@@ -20,7 +20,7 @@
            <%= cl_image_tag(property.photo.key,
              width: 300, height: 200, crop: :fill) %>
             <ul>
-              <li><%= link_to number_to_currency(property.price), new_property_booking_path(property) %></li>
+              <li><%= link_to number_to_currency(property.price), new_property_consultation_path(property) %></li>
               <li><%= "#{property.bedrooms} bedrooms" %></li>
               <li><%= property.address %></li>
             </ul>

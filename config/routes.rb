@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'consultations/destroy'
   devise_for :users
   resources :properties do
-    resources :bookings
+    resources :consultations
   end
   get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
   get '/user_properties', to: 'properties#user_properties', as: 'user_properties'
