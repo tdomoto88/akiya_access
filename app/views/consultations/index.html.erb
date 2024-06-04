@@ -1,2 +1,12 @@
 <h1>Consultations#index</h1>
 <p>Find me in app/views/consultations/index.html.erb</p>
+<h1>Dashboard</h1>
+<h2>Your Bookings</h2>
+<div class="booking-card">
+  <% @consultations.each do |consultation| %>
+  <div class='card'>
+    <p><%= consultation.property.address %></p>
+    <p>Consultation Date <%= consultation.date %></p>
+  </div>
+  <% end %>
+</div>
