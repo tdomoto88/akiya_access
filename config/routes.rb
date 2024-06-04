@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
   get '/user_properties', to: 'properties#user_properties', as: 'user_properties'
   #get '/user_properties/property_bookings', to: 'bookings#property_bookings', as: 'property_bookings'
-  root to: "properties#index"
+  root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

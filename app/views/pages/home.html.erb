@@ -1,2 +1,48 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<h1>Find your Akiya 空き家</h1>
+    <h2>Search, Find, and Purchase Your Dream Home in Japan</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-4 my-2">
+      <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <% @properties.each_slice(3) do |properties| %>
+      <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="2000">
+        <div class="card-container">
+          <% properties.each do |property| %>
+            <% if property.photo.attached? %>
+              <div class="card">
+                <div class="card-content">
+                  <%= cl_image_tag(property.photo.key, width: 400, height: 300, crop: :fill) %>
+                  <h3><%= number_to_currency(property.price) %></h3>
+                  <p><%= "#{property.bedrooms} bedrooms" %></p>
+                  <p><%= property.city %></p>
+                  <p><%= link_to "More info", new_property_booking_path(property), class:"button-outline" %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
