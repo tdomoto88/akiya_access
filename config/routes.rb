@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'favourites/index'
+  get 'favourites/create'
+  get 'favourites/destroy'
+  get 'consultations/index'
+  get 'consultations/new'
+  get 'consultations/create'
+  get 'consultations/edit'
+  get 'consultations/update'
+  get 'consultations/destroy'
   devise_for :users
   resources :properties do
     resources :bookings
