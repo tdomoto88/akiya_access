@@ -43,6 +43,10 @@ class PropertiesController < ApplicationController
     @properties = Property.where(user: current_user)
   end
 
+  def show
+    @property = Property.find(params[:id])
+  end
+
   private
 
   def property_params
