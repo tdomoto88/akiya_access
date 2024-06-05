@@ -21,7 +21,7 @@
                   <p><%= property.city %>, <%= property.prefecture %></p>
                   <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
 
-                  <p><%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %></p>
+                  <p><%= link_to "More info", property_path(property), class:"button-outline" %></p>
           </div>
         <% end %>
       <% else %>
