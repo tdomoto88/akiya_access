@@ -1,0 +1,9 @@
+  <div class="property-grid">
+    <% if properties.any? %>
+      <% properties.each do |property| %>
+        <%= render "property", property: property %>
+      <% end %>
+    <% else %>
+      <p>Sorry, no properties found.</p>
+    <% end %>
+  </div>
