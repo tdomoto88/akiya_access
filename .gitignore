@@ -43,3 +43,4 @@
 .env*
 dump.sql
 db/migrate/20240530092202_add_photo_url_to_properties.rb
+.env*
