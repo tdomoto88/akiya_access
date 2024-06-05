@@ -8,7 +8,7 @@
               params[:query],
               class: "form-control",
               placeholder: "Type a keyword"
-          %>
+        %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
       <% end %>
 
@@ -20,7 +20,6 @@
             <%= cl_image_tag(property.photo.key, width: 400, height: 300, crop: :fill) %>
                   <p><%= property.city %>, <%= property.prefecture %></p>
                   <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-
                   <p><%= link_to "More info", property_path(property), class:"button-outline" %></p>
           </div>
         <% end %>

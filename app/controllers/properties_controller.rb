@@ -19,7 +19,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-
   def new
     @property = Property.new
   end
