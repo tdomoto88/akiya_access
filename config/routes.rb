@@ -12,15 +12,16 @@ Rails.application.routes.draw do
   # Consultations routes
   # resources :consultations, only: [:index, :new, :create, :edit, :update, :destroy]
   # HUGH'S CODE
-  get 'consultations/index', to: 'consultations#index', as: 'consultations'
+  # get 'consultations/index', to: 'consultations#index', as: 'consultations'
   # get 'consultations/new'
   # get 'consultations/create'
   # get 'consultations/edit'
   # get 'consultations/update'
   # get 'consultations/destroy'
+  resources :consultations, only: :index
 
   resources :properties do
-    resources :consultations, except: :index
+    resources :consultations, only: [:new, :create]
   end
 
   # HUGH'S CODE THAT WE WILL KEEP
