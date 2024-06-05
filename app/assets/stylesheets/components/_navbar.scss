@@ -1,0 +1,51 @@
+.AA-navbar {
+  width: 1440px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AA-navbar-left {
+  padding: 0 25px;
+  height: 100%;
+}
+
+.logo {
+  height: 100%;
+  max-width: 100px;
+  text-align: left;
+}
+
+.logo-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.AA-navbar-center {
+  // flex: 1;
+  display: flex;
+  padding: 1em;
+  // justify-content: space-between;
+  background-color: #803D3B;
+  align-items: center;
+  // padding: 0 25px;
+}
+
+.AA-navbar-center a {
+  padding: 0 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.AA-navbar-right {
+  padding: 0 25px;
+}
+
+// .favourites-link {
+  /* Add styles for favourites link */
+// }
+
+/* Add styles for login/logout and avatar dropdown */

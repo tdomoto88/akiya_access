@@ -1,32 +1,5 @@
 // Specific CSS for your home-page
 
-body {
-  margin: 0;
-  padding: 20px;
-  background-image: asset-url('AkiyaAccessBackground.jpg');
-  background-size: cover; /* Ensures the image covers the entire background */
-  text-align: center;
-}
-
-h1 {
-  margin: 0 0 0px;
-  font-size: 35px;
-}
-
-h2 {
-  margin: 0 0 0px;
-  font-size: 25px;
-}
-
-h3 {
-  margin: 0 0 0px;
-  font-size: 20px;
-}
-
-p {
-  margin: 0 0 0px;
-  font-size: 15px;
-}
 
 .search-container {
   display: flex;
