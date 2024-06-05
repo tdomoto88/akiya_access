@@ -1,0 +1,17 @@
+<nav class="AA-navbar">
+  <div class="AA-navbar-left">
+    <%= link_to root_path, class: "logo" do %>
+      <%= image_tag "Akiya Access.png", alt: "Logo", class: "logo-image" %>
+    <% end %>
+  </div>
+  <div class="AA-navbar-center">
+    <p class="><%= link_to "Home", root_path %></p>
+     <%# LANCE: I will add other link_to paths later  %>
+    <p><%= link_to "Services Packages", root_path %></p>
+    <p><%= link_to "FAQs", root_path %></p>
+  </div>
+  <div class="AA-navbar-right">
+    <p><%= link_to "Favourites", root_path, class: "favourites-link" %></p>
+    <!-- LANCE: I will Add space for logout and avatar dropdown which will include "add a property" later -->
+  </div>
+</nav>
