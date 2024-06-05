@@ -28,9 +28,7 @@
                   <p><%= property.city %>, <%= property.prefecture %></p>
                   <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
 
-                  <%= link_to new_property_consultation_path(property), class:"button-outline" do %>
-                    <h3>More info</h3>
-                  <% end %>
+                  <%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %>
                   <%= render "favourites/actions", property: property, user: current_user %>
                 </div>
               </div>
