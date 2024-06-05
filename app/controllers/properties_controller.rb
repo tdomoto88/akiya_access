@@ -19,7 +19,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-
   def new
     @property = Property.new
   end
@@ -43,8 +42,6 @@ class PropertiesController < ApplicationController
   def user_properties
     @properties = Property.where(user: current_user)
   end
-
-
 
   private
 
