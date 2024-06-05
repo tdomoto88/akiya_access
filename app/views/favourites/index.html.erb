@@ -8,10 +8,11 @@
               <div class="card">
                 <div class="card-content">
                   <%= cl_image_tag(favourite.property.photo.key, width: 400, height: 300, crop: :fill) %>
-                  <p><%= favourite.property.city %>, <%= property.prefecture %></p>
+                  <p><%= favourite.property.city %>, <%= favourite.property.prefecture %></p>
                   <p><%= "#{favourite.property.bedrooms} bedrooms | #{number_to_currency(favourite.property.price)}" %></p>
 
                   <p><%= link_to "More info", new_property_consultation_path(favourite.property), class:"button-outline" %></p>
+                  <%= render "favourites/actions", property: favourite.property, user: current_user %>
                 </div>
               </div>
             <% end %>

@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  get 'favourites/index', to: 'favourites#index', as: 'favourites'
-  get 'favourites/create'
-  get 'favourites/destroy'
-  get 'consultations/index', to: 'consultations#index', as: 'consultations'
-  get 'consultations/new'
-  get 'consultations/create'
-  get 'consultations/edit'
-  get 'consultations/update'
-  get 'consultations/destroy'
   devise_for :users
   resources :properties do
     resources :consultations, except: :index
+    resources :favourites, only: :create
   end
+
+  resources :favourites, only: [:index, :destroy]
+  resources :consultations, only: :index
   get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
   get '/user_properties', to: 'properties#user_properties', as: 'user_properties'
   #get '/user_properties/property_bookings', to: 'bookings#property_bookings', as: 'property_bookings'
