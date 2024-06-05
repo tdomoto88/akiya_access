@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'favourites/index'
+  get 'favourites/index', to: 'favourites#index', as: 'favourites'
   get 'favourites/create'
   get 'favourites/destroy'
   get 'consultations/index', to: 'consultations#index', as: 'consultations'
