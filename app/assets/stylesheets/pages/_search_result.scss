@@ -1,19 +1,21 @@
+#search_result.scss
 
 .property-grid {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Three columns */
-  //grid-template-rows: repeat(3, auto);  /* Two rows */
-  grid-gap: 30px; /* Space between cards */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 30px;
   padding: 15px;
 }
 
 .card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #f9f9f9; /* Light background color for visibility */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  text-align: center;
+  display: flex;
+  width: 238px;
+  height: 343px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--Card-Div, #AF8260);
 }
 
 .card img {
