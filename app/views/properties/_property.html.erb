@@ -5,5 +5,6 @@
     <%= property.prefecture %></span></p>
   <p class="property-info">
     <%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+  <br>
   <p><%= link_to "More Info", property_path(property), class: "button-outline" %></p>
 </div>
