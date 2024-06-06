@@ -17,10 +17,12 @@ Rails.application.routes.draw do
     resources :consultations, only: [:new, :create]
     resources :favourites, only: :create
   end
+
+  get "/user_properties", to: 'properties#user_properties', as: 'user_properties'
 end
 
 # HUGH'S CUSTOM ROUTES THAT I AM UNSURE WHETHER WE WILL KEEP
 # get '/user_bookings', to: 'bookings#user_bookings', as: 'user_bookings'
 # get "search_result", to: 'properties#search_result', as: 'search_result'
-# get '/user_properties', to: 'properties#user_properties', as: 'user_properties'
+#get '/user_properties', to: 'properties#user_properties', as: 'user_properties'
 #get '/user_properties/property_bookings', to: 'bookings#property_bookings', as: 'property_bookings'

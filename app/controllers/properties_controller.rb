@@ -27,7 +27,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user=current_user
     if @property.save
-      redirect_to user_bookings_path, notice: 'Property was successfully created.'
+      redirect_to user_properties, notice: 'Property was successfully created.'
     else
       render :new
     end
@@ -45,6 +45,8 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    current_view_count = @property.views.nil? ? 0 : @property.views
+    @property.update(views: current_view_count + 1)
   end
 
   private
