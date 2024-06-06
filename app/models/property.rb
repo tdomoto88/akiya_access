@@ -12,4 +12,12 @@ class Property < ApplicationRecord
   def favourited_by(user)
     Favourite.find_by(user: user, property: self)
   end
+
+  def favorite_count
+    Favourite.where(property_id: self.id).count
+  end
+
+  def view_count
+    self.views
+  end
 end
