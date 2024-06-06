@@ -57,11 +57,13 @@
         </div>
       </div>
       <div class="bg-white p-3 mb-2 rounded-4 bg-secondary-subtle text-secondary-emphasis">
-
+        <%= render "favourites/actions", property: @property, user: current_user %>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="fa-solid fa-share-nodes"></i>
         </button>
-
+        <div>
+          <%= "#{@property.favorite_count} likes, #{@property.view_count} views" %>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -103,6 +105,7 @@
                   </button>
                   </a>
                 </div>
+                  <%# <%= render "favourites/actions", property: property, user: current_user %>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
