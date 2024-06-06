@@ -1,10 +1,11 @@
 
+<div class='new-property'>
 <h1>List Your Property</h1>
-<h3>Please enter the details of your property</h3>
+<h5>Please enter the details of your property</h5>
 <div class="content">
   <div class="main-content">
     <%= simple_form_for [@property] do |f| %>
-  <div class="form-inputs">
+    <div class="form-inputs">
       <%= f.input :price,
                   required: true,
                   autofocus: true,
@@ -40,15 +41,19 @@
                   label: 'Size of Land',
                   placeholder: 'sq m',
                   required: true %>
+
        <%= f.input :description,
+                  label: 'Description',
+                  size: '70x5',
                   required: true,
                   input_html: { autocomplete: "description"}%>
        <%= f.input :photo, as: :file %>
+    </div>
 
-  </div>
   <div class="form-actions">
-      <%= f.button :submit, "Add property" %>
+      <%= f.button :submit, "Add property", class: 'button' %>
   </div>
 <% end %>
-
-  </div>
+</div>
+</div>
+</div>
