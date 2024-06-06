@@ -15,9 +15,12 @@ User.destroy_all
 puts "Creating users..."
 
 users = [
-  { first_name: "Sebastian", last_name: "Burke", email: "sebastian.b@gmail.com", password: "123456", is_owner: false },
-  { first_name: "Mamun", last_name: "Jan", email: "mamun.j@gmail.com", password: "123456", is_owner: false },
-  { first_name: "John", last_name: "Doe", email: "abc@gmail.com", password: "123456", is_owner: true },
+  { first_name: "Tsuyoshi", last_name: "Domoto", email: "tdomoto88@gmail.com", password: "123456", is_owner: true },
+  { first_name: "Lance", last_name: "Masina", email: "lance@lancemasina.com", password: "123456", is_owner: true },
+  { first_name: "Xavier", last_name: "Ropero", email: "xavier.ropero@gmail.com", password: "123456", is_owner: true },
+  { first_name: "Hugh", last_name: "Clayton", email: "hughgrassbyclayton@hotmail.com", password: "123456", is_owner: true },
+  { first_name: "John", last_name: "Doe", email: "john@gmail.com", password: "123456", is_owner: false },
+  { first_name: "Jane", last_name: "Doe", email: "jane@gmail.com", password: "123456", is_owner: false }
 ]
 
 users.each do |attributes|
