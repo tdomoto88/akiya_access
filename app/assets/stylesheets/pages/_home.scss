@@ -1,18 +1,46 @@
 // Specific CSS for your home-page
+.overlay-container {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 150px); /* Subtract navbar height from container height */
+}
 
+.title-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-home h1 {
+  text-align: center;
+  font-size: 167px; /* Adjust font size as needed */
+  opacity: 0.5;
+  margin: 0; /* Remove default margin */
+}
+
+#AA-main-title {
+  position: relative;
+  z-index: 2;
+}
 
 .search-container {
+  position: absolute;
+  top: calc(100% + 20px); /* Position below the overlay-container */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center; /* Center the search bar horizontally */
   align-items: center;
-  margin-bottom: 20px;
+  width: 80%; /* Adjust width as needed */
   max-width: 600px; /* Set a maximum width for the search bar */
-  margin: 0 auto 20px; /* Center the search bar within its container */
   padding: 10px; /* Add some padding for better spacing */
   border: 2px solid #ccc;
   border-radius: 8px;
   background-color: #fff;
+  z-index: 3; /* Ensure search container appears above overlay */
 }
+
 
 #search-input {
   padding: 10px;

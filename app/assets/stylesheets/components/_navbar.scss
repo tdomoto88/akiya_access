@@ -28,15 +28,16 @@
   // flex: 1;
   display: flex;
   padding: 1em;
-  // justify-content: space-between;
-  background-color: #803D3B;
+  justify-content: space-between;
+  background-color: rgba(128, 61, 59, 0.5);
   align-items: center;
+  border-radius: 50px;
   // padding: 0 25px;
 }
 
 .AA-navbar-center a {
   padding: 0 15px;
-  color: #333;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
