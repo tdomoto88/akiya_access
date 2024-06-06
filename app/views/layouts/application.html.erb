@@ -10,14 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body style="<%= "background-image: url(#{asset_path('AkiyaAccessBackground.jpg')});" if current_page? root_path %>">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
-
-
-
-  
-
   </body>
 </html>
