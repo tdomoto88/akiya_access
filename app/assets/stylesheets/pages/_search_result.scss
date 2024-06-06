@@ -26,6 +26,12 @@ h1 {
   max-width: 250px; /* Ensure the card does not exceed this width */
 }
 
+.links {display: flex;
+  justify-content: center;
+}
+
+.button-outline {}
+
 .card-search-result img {
   border-top-left-radius: 15px; /* Adjust the radius value as needed */
   border-top-right-radius: 15px; /* Adjust the radius value as needed */

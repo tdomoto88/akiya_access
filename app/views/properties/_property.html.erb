@@ -2,8 +2,11 @@
   <%= cl_image_tag(property.photo.key, width: 238, height: 240, crop: :fill) %>
   <span class="prefecture">
     <p><%= property.city %>,
-    <%= property.prefecture %></span></p>
+    <%= property.prefecture %></p></span>
   <p class="property-info">
     <%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-  <p><%= link_to "More Info", property_path(property), class: "button-outline" %></p>
+  <div class="links">
+  <%= link_to "More Info", property_path(property), class: "button-outline" %>
+  <%= render "favourites/actions", property: property, user: current_user %>
+  </div>
 </div>
