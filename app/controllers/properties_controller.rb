@@ -27,7 +27,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user=current_user
     if @property.save
-      redirect_to user_bookings_path, notice: 'Property was successfully created.'
+      redirect_to user_properties, notice: 'Property was successfully created.'
     else
       render :new
     end
