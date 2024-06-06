@@ -29,6 +29,12 @@ h1 {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+.links {display: flex;
+  justify-content: center;
+}
+
+.button-outline {}
+
 .card-search-result img {
   border-top-left-radius: 15px; /* Adjust the radius value as needed */
   border-top-right-radius: 15px; /* Adjust the radius value as needed */
