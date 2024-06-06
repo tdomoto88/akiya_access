@@ -1,9 +1,20 @@
 // Specific CSS for your home-page
  .overlay-container {
    position: relative;
-   width: 100%;
    height: calc(100% - 150px); /* Subtract navbar height from container height */
  }
+
+ #enlarged-text {
+  font-size: 165px;
+  opacity: 50%;
+ }
+
+ #AA-main-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .card-container {
  display: flex;
