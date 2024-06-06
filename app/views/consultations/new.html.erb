@@ -1,61 +1,50 @@
-<h1>Consultations#new</h1>
+<h1>Consultation Page</h1>
 <p>Find me in app/views/consultations/new.html.erb</p>
-<div style="width: 100%; height: 100%; background: #D9D9D9; display: flex;">
-  <div style="width: 66%; padding: 20px;">
-    <h1>Consultation page</h1>
+<div style="width: 100%; height: 100%; background: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+  <div style="width: 80%; padding: 20px; background: white; border-radius: 10px;">
     <div class="container">
-      <div id="property-carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <% if @property.photo.attached? %>
-      <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
-    <% end %>
-            <div class="carousel-caption left-caption">
-              <% if @property.present? %>
-                <div class="caption-box">
-                  <h2 style="text-align: left;"><%= number_to_currency(@property.price) %></h2>
-                  <div>
-                    <h3 style="text-align: left;"><%= "#{@property.bedrooms} Bedroom" %></h3>
-                    <p style="text-align: left;"><%= @property.address %></p>
-                  </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div style="padding: 20px;">
+            <%= simple_form_for [@property, @consultation] do |f| %>
+              <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                <div>
+                  <label for="email" class="form-label">Firstname</label>
                 </div>
-              <% end %>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag "02.webp", class: "d-block w-100" %>
-            <div class="carousel-caption left-caption">
-              <% if @property.present? %>
-                <div class="caption-box">
-                  <h2 style="text-align: left;"><%= number_to_currency(@property.price) %></h2>
+                  <input type="text" class="form-control" placeholder="Firstname" aria-label="Firstname">
                   <div>
-                    <h3 style="text-align: left;"><%= "#{@property.bedrooms} Bedroom" %></h3>
-                    <p style="text-align: left;"><%= @property.address %></p>
-                  </div>
+                  <label for="email" class="form-label">Lastname</label>
                 </div>
-              <% end %>
-            </div>
+                  <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname">
+                </div>
+              <div class="input-group mb-3">
+                <div>
+                  <label for="email" class="form-label">Email</label>
+                </div>
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="email" id="email" aria-label="Email" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                <span class="input-group-text">Your message</span>
+                <textarea class="form-control" aria-label="Your message"></textarea>
+              </div>
+              <div class="form-actions mt-3">
+                <button type="button" class="btn btn-secondary calendar-button">Calendly Integration + Timezone selection</button>
+                <div>
+                  <%= f.button :submit, "Submit", class: "btn btn-primary" %>
+                </div>
+              </div>
+            <% end %>
           </div>
-          <!-- Add additional carousel items for other images -->
+        </div>
+      </div>
+        <div class="col-md-6">
+          <% if @property.photo.attached? %>
+            <%= cl_image_tag(@property.photo.key, class: "img-fluid rounded") %>
+          <% end %>
         </div>
       </div>
     </div>
-    <% if @property.present? %>
-      <div class="description-box">
-        <h2>Description</h2>
-        <p><%= @property.description %></p>
-      </div>
-    <% end %>
-  </div>
-  <div style="width: 33%; padding: 20px;">
-    <%= simple_form_for [@property, @consultation] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :date, label: 'Consultation Time', required: true, autofocus: true %>
-
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Make Booking", class: "btn btn-primary" %>
-      </div>
-    <% end %>
   </div>
 </div>
