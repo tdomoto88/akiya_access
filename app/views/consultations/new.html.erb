@@ -8,42 +8,38 @@
           <div style="padding: 20px;">
             <%= simple_form_for [@property, @consultation] do |f| %>
               <div class="form-actions mt-3 mb-3">
-                <button type="button" class="btn btn-secondary calendar-button">Calendly Integration + Timezone selection</button>
-                <div>
-                  <div class="input-group mb-3">
-                    <div class="input-group mb-3">
-                      <div>
-                        <label for="email" class="form-label">Firstname</label>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Firstname" aria-label="Firstname">
-                      <div>
-                        <label for="email" class="form-label">Lastname</label>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname">
-                    </div>
-                    <div class="input-group mb-3">
-                      <div>
-                        <label for="email" class="form-label">Email</label>
-                      </div>
-                      <span class="input-group-text" id="basic-addon1">@</span>
-                      <input type="text" class="form-control" placeholder="email" id="email" aria-label="Email" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group">
-                      <span class="input-group-text">Your message</span>
-                      <textarea class="form-control" aria-label="Your message"></textarea>
-                    </div>
-                    <%= f.button :submit, "Send", class: "btn btn-primary" %>
-                    <%= f.button :submit, "Online booking", class: "btn btn-primary" %>
+                <h5>Calendar</h5>
+                <iframe
+                  src="https://calendly.com/tdomoto88/meeting-with-yoshi"
+                  width="100%" height="300px">
+                </iframe>
+                <div class="d-flex justify-content-between">
+                  <div class="form-group mb-3">
+                    <label for="firstname" class="form-label">Firstname</label>
+                    <input type="text" class="form-control" placeholder="Firstname" aria-label="Firstname" id="firstname">
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="lastname" class="form-label">Lastname</label>
+                    <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname" id="lastname">
                   </div>
                 </div>
+                <div class="form-group mb-3">
+                  <div>
+                    <label for="email" class="form-label">Email</label>
+                  </div>
+                  <input type="text" class="form-control" placeholder="email" id="email" aria-label="Email" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-text">Your message</span>
+                  <textarea class="form-control" aria-label="Your message"></textarea>
+                </div>
+                <%= f.button :submit, "Send", class: "btn btn-primary" %>
               </div>
             <% end %>
           </div>
         </div>
         <div class="col-md-6">
-          <% if @property.photo.attached? %>
-            <%= cl_image_tag(@property.photo.key, class: "img-fluid rounded") %>
-          <% end %>
+          <img src="https://media1.thrillophilia.com/filestore/zhi5cd01p7wgj7gjtizf3oh8apdu_1616592423_shutterstock_312911786.jpg" class="consultation-img">
         </div>
       </div>
     </div>
