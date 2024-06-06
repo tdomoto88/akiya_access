@@ -24,11 +24,19 @@ h1 {
   background: var(--Card-Div, #AF8260);
   flex: 1 0 21%; /* Flex properties to adjust card size */
   max-width: 250px; /* Ensure the card does not exceed this width */
+  position: relative;
+  overflow: hidden; /* Optional: Ensures the content doesn't overflow the card */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card-search-result img {
   border-top-left-radius: 15px; /* Adjust the radius value as needed */
   border-top-right-radius: 15px; /* Adjust the radius value as needed */
+}
+
+.card-search-result:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #map {
