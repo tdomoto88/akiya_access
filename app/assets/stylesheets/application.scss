@@ -13,3 +13,60 @@
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 @import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-image: asset-url('AkiyaAccessBackground.jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Inter;
+  font-weight: bold;
+  margin: 0 0 0px;
+}
+
+h1 {
+  margin: 0 0 0px;
+  font-size: 67px;
+  color: #000000;
+}
+
+#title-home {
+  font-size: 165px;
+  opacity: 0.5;
+}
+
+h2 {
+  margin: 0 0 0px;
+  font-size: 51px;
+}
+
+h3 {
+  margin: 0 0 0px;
+  font-size: 38px;
+}
+
+h4 {
+  margin: 0 0 0px;
+  font-size: 28px;
+}
+
+h5 {
+  margin: 0 0 0px;
+  font-size: 22px;
+}
+
+p {
+  font-family: Quicksand;
+  font-size: 16px;
+  margin: 0 0 0px;
+}
+
+.caption {
+  font-family: Quicksand;
+  font-size: 12px;
+  margin: 0 0 0px;
+}

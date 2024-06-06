@@ -1,7 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<h1>Find your Akiya 空き家</h1>
-    <h2>Search, Find, and Purchase Your Dream Home in Japan</h2>
+<h1 id="title-home">空き家</h1>
+<h1 id="title-home">アクセス</h1>
+<h1>Akiya Access</h1>
+    <h5>Find Your Dream Home in Japan</h5>
 
   <div class="row justify-content-center">
     <div class="col-sm-4 my-2">
@@ -28,7 +28,8 @@
                   <p><%= property.city %>, <%= property.prefecture %></p>
                   <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
 
-                  <p><%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %></p>
+                  <%= link_to "More info", new_property_consultation_path(property), class:"button-outline" %>
+                  <%= render "favourites/actions", property: property, user: current_user %>
                 </div>
               </div>
             <% end %>
