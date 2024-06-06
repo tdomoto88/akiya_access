@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 20px;
   background-image: asset-url('AkiyaAccessBackground.jpg');
-  background-size: cover; /* Ensures the image covers the entire background */
+  background-size: 120%; /* Ensures the image covers the entire background */
   text-align: center;
 }
 
@@ -32,11 +32,6 @@ h1 {
   margin: 0 0 0px;
   font-size: 67px;
   color: #000000;
-}
-
-#title-home {
-  font-size: 165px;
-  opacity: 0.5;
 }
 
 
