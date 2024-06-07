@@ -13,16 +13,26 @@
   <div class="AA-navbar-right">
     <div class="dropdown">
       <button
-      class="btn btn-secondary dropdown-toggle dropdown-circle"
+      class="dropdown <%= user_signed_in? ? "logged-in" : "btn dropdown-circle toggle-button" %>"
       type="button"
       id="dropdownMenuButton2"
       data-bs-toggle="dropdown"
       aria-expanded="false">
-    <i class="fas fa-bars"></i>
+      <% unless user_signed_in? %>
+      <i class="fas fa-bars">
+      <% end %>
+
+    </i>
       </button>
   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><%= link_to "Login", user_session_path %></li>
-    <li><%= link_to "Book a consultation", consultations_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Logout", destroy_user_session_path %></li>
+      <li><%= link_to "View Favourites", favourites_path %></li>
+      <li><%= link_to "Add a property", new_property_path %></li>
+    <% else %>
+      <li><%= link_to "Login", user_session_path %></li>
+      <li><%= link_to "Book a consultation", consultations_path %></li>
+    <% end %>
     <%# I NEED TO SET VALIDATIONS FOR WHEN A USER IS SIGNED IN SO THAT THEY CAN HAVE A "VIEW FAVOURITES" AND "VIEW BOOKINGS" %>
   </ul>
 </div>

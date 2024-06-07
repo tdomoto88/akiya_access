@@ -48,11 +48,23 @@
 
 .AA-navbar-right {
   display: flex;
-  padding: 1em;
+  height: 50px;
+  width: 50px;
+  padding: 0;
   justify-content: center;
   background-color: rgba(128, 61, 59, 0.5);
   align-items: center;
   border-radius: 50%;
+}
+
+.dropdown.logged-in {
+  background:url(asset-path('Avatar.png'));
+  background-size: cover;
+  border-radius: 50%;
+  width: 51px;
+  height: 51px;
+  padding: 0;
+  margin: 0;
 }
 
 .AA-navbar-right a {
