@@ -1,10 +1,10 @@
 <div class="overlay-container">
   <div class="title-home">
-    <h1 id="enlarged-text">空き家<br>アクセス</h1>
+    <h1 id="enlarged-text" class="text-center">空き家<br>アクセス</h1>
   </div>
 </div>
   <h1 id="AA-main-title">Akiya Access</h1>
-    <h5>Find Your Dream Home in Japan</h5>
+    <h5 class="text-center">Find Your Dream Home in Japan</h5>
   <div class="row justify-content-center">
     <div class="col-sm-4 my-2">
       <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
@@ -35,11 +35,12 @@
               <div class="card">
                 <div class="card-content">
                   <%= cl_image_tag(property.photo.key, width: 400, height: 300, crop: :fill) %>
-                  <p><%= property.city %>, <%= property.prefecture %></p>
-                  <p><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-
-                  <%= link_to "More info", property_path(property), class:"button-outline" %>
-                  <%= render "favourites/actions", property: property, user: current_user %>
+                  <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
+                  <p class="text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+                  <p class="text-center">
+                    <%= link_to "More info", property_path(property), class:"button-outline" %>
+                    <%= render "favourites/actions", property: property, user: current_user %>
+                  </p>
                 </div>
               </div>
             <% end %>
