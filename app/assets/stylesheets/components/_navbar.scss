@@ -65,3 +65,17 @@
 // }
 
 /* Add styles for login/logout and avatar dropdown */
+/* Custom styles for the circular dropdown button */
+.dropdown-circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-circle .fas {
+  font-size: 1em; /* Adjust the icon size as needed */
+}
