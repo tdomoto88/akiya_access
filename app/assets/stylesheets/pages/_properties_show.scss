@@ -28,4 +28,38 @@ a {
 
 button i {color: white}
 
-a button i {color: black}
+.btn.consultation {
+  background-color: black;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  align-items: right;
+  margin-left: 300px;
+}
+
+.btn.consultation:hover {
+  background-color: rgb(99, 98, 98);
+  color: rgb(255, 255, 255);
+  transition: 1s;
+}
+
+.btn-primary {
+  color: black;
+}
+
+.btn-secondary {
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: black;
+  color: white;
+}
+
+.share-button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+}
