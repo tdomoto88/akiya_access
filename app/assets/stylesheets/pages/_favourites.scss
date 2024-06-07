@@ -1,9 +1,14 @@
-.favourites-container {display: flex;
-justify-content: left;
-flex-wrap: wrap;
+.favourites-container {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
-.card {margin: 6px;
+.card {
+  border-radius: 20px;
+  margin: 6px;
 }
 
-i {color:black}
+i {
+  color:black
+}

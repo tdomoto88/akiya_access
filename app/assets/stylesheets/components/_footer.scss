@@ -1,0 +1,16 @@
+.akiya-footer {
+  background-color: $footer-bg-color;
+
+  h4, h5, p {
+    color: $footer-text-color;
+  }
+
+  .share-button {
+    background-color: $footer-bg-color;
+    color: $footer-text-color;
+    border-radius: 5px;
+    padding: 0;
+    margin: 10px;
+    border: 0;
+  }
+}
