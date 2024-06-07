@@ -2,8 +2,8 @@
 <div class="row">
   <div class="col-md-6">
     <div class="mb-2">
-      <% if @property.photo.attached? %>
-        <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
+      <% unless @property.photos.empty? %>
+        <%= cl_image_tag(@property.photos.first.key, class: "d-block w-100") %>
       <% end %>
     </div>
 
@@ -17,7 +17,7 @@
             <i class="fa-solid fa-bed me-3" style="float: left"></i>
             <p style="text-align: left;"><%= "#{@property.bedrooms} #{@property.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}" %></p>
             <i class="fa-solid fa-shower me-3" style="float: left"></i>
-            <p style="text-align: left;"><%= "#{@property.bathrooms} #{@property.bathrooms > 1 ? 'Bathroom' : 'Bathroom'}" %></p>
+            <p style="text-align: left;"><%= "#{@property.bathrooms} #{@property.bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}" %></p>
             <i class="fa-regular fa-square me-3" style="float: left"></i>
             <p style="text-align: left; mb-2"><%= "Building size: #{@property.size_building} sq m" %></p>
             <i class="fa-solid fa-square me-3" style="float: left"></i>
@@ -39,23 +39,23 @@
   <div class="col-md-6">
     <div class="row row-cols-2">
         <div class="col mb-2">
-          <% if @property.photo.attached? %>
-            <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
+          <% unless @property.photos.empty? %>
+            <%= cl_image_tag(@property.photos.second.key, class: "d-block w-100") %>
           <% end %>
         </div>
         <div class="col mb-2">
-          <% if @property.photo.attached? %>
-            <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
+          <% if @property.photos.attached? %>
+            <%= cl_image_tag(@property.photos.third.key, class: "d-block w-100") %>
           <% end %>
         </div>
         <div class="col mb-2">
-          <% if @property.photo.attached? %>
-           <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
+          <% if @property.photos.attached? %>
+           <%= cl_image_tag(@property.photos.fourth.key, class: "d-block w-100") %>
           <% end %>
         </div>
         <div class="col mb-2">
-          <% if @property.photo.attached? %>
-            <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
+          <% if @property.photos.attached? %>
+            <%= cl_image_tag(@property.photos.fifth.key, class: "d-block w-100") %>
           <% end %>
         </div>
       </div>

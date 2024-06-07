@@ -31,10 +31,11 @@
       <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="5000">
         <div class="card-container">
           <% properties.each do |property| %>
-            <% if property.photo.attached? %>
+
+            <% unless property.photos.empty? %>
               <div class="card">
                 <div class="card-content">
-                  <%= cl_image_tag(property.photo.key, width: 350, height: 300, crop: :fill) %>
+                  <%= cl_image_tag(property.photos.first.key, width: 350, height: 300, crop: :fill) %>
                   <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
                   <p class="text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
                   <p class="text-center">
