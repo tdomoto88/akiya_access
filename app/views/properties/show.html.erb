@@ -1,7 +1,4 @@
-<h1>Akiyas#show</h1>
-<p>Find me in app/views/akiyas/show.html.erb</p>
-
-<h1 class="m-5 text-center">Properties listing</h1>
+<h1 class="m-5 text-center">Property listing</h1>
 <div class="row">
   <div class="col-md-6">
     <div class="mb-2">
@@ -13,7 +10,7 @@
     <div class="bg-white p-3 mb-3 rounded-4 bg-secondary-subtle text-secondary-emphasis">
       <% if @property.present? %>
         <div class="caption-box">
-          <h3 style="text-align: left;">Informations</h3>
+          <h3 style="text-align: left;">Information</h3>
           <div>
             <p style="text-align: left;"><%= "#{@property.bedrooms} #{@property.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}" %></p>
             <p style="text-align: left;"><%= "#{@property.bathrooms} #{@property.bathrooms > 1 ? 'Bathroom' : 'Bathroom'}" %></p>
@@ -57,72 +54,79 @@
         </div>
       </div>
       <div class="bg-white p-3 mb-2 rounded-4 bg-secondary-subtle text-secondary-emphasis">
-        <%= render "favourites/actions", property: @property, user: current_user %>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="fa-solid fa-share-nodes"></i>
-        </button>
-        <div>
-          <%= "#{@property.favorite_count} likes, #{@property.view_count} views" %>
+        <div class="d-flex justify-content-end align-items-end mb-2">
+          <%= render "favourites/actions", property: @property, user: current_user %>
+          <button type="button" class="bg-secondary-subtle border-0 ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="bi bi-share text-black mb-2"></i>
+          </button>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Share</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="share-buttons">
-                  <a href="https://facebook.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
-                    <button class="share-button facebook">
-                      <i class="fab fa-facebook-f"></i>
-                    </button>
-                  </a>
-                  <a href="https://twitter.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
-                  <button class="share-button twitter">
-                    <i class="fab fa-twitter"></i>
-                  </button>
-                  </a>
-                  <a href="https://instagram.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
-                  <button class="share-button instagram">
-                    <i class="fab fa-instagram"></i>
-                  </button>
-                  </a>
-                <a href="https://whatsapp.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
-                  <button class="share-button whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                  </button>
-                  </a>
-                  <a href="https://messenger.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
-                  <button class="share-button messenger">
-                    <i class="fa-brands fa-facebook-messenger"></i>
-                  </button>
-                  </a>
-                  <a href="https://gmail.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
-                  <button class="share-button gmail">
-                    <i class="fa-solid fa-envelope"></i>
-                  </button>
-                  </a>
-                </div>
-                  <%# <%= render "favourites/actions", property: property, user: current_user %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
+
+        <% if @property.present? %>
+          <div class="caption-box">
+            <h3 style="text-align: left;"><%= number_to_currency(@property.price) %></h3>
+            <div class="m-3">
+              <h5 style="text-align: left;"><%= "#{@property.age}" %></h5>
+              <h5 style="text-align: left;"><%= "#{@property.address}" %></h5>
             </div>
           </div>
+        <% end %>
+
+        <div style="text-align: left;">
+          <%= "#{@property.favorite_count} likes, #{@property.view_count} views" %>
         </div>
-          <% if @property.present? %>
-            <div class="caption-box">
-              <h3 style="text-align: left;"><%= number_to_currency(@property.price) %></h3>
-              <div class="m-3">
-                <h5 style="text-align: left;"><%= "#{@property.age}" %></h5>
-                <h5 style="text-align: left;"><%= "#{@property.address}" %></h5>
-              </div>
-            </div>
-          <% end %>
+        <div class="btn consultation">
           <%= link_to 'Book a consultation', new_property_consultation_path(@property) %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Share</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Share your property via social media:</p>
+        <div class="share-buttons">
+          <a href="https://facebook.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
+            <button class="share-button facebook">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </a>
+          <a href="https://twitter.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
+          <button class="share-button twitter">
+            <i class="fab fa-twitter"></i>
+          </button>
+          </a>
+          <a href="https://instagram.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
+          <button class="share-button instagram">
+            <i class="fab fa-instagram"></i>
+          </button>
+          </a>
+        <a href="https://whatsapp.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
+          <button class="share-button whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+          </a>
+          <a href="https://messenger.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
+          <button class="share-button messenger">
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </button>
+          </a>
+          <a href="https://gmail.com" target="_blank" data-controller="clipboard" data-action="clipboard#copy">
+          <button class="share-button gmail">
+            <i class="fa-solid fa-envelope"></i>
+          </button>
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
