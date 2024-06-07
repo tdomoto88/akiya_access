@@ -12,6 +12,7 @@
         <div class="caption-box">
           <h3 style="text-align: left;">Information</h3>
           <div>
+            <p style="text-align: left;"><%= @property.property_type %></p>
             <p style="text-align: left;"><%= "#{@property.bedrooms} #{@property.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}" %></p>
             <p style="text-align: left;"><%= "#{@property.bathrooms} #{@property.bathrooms > 1 ? 'Bathroom' : 'Bathroom'}" %></p>
             <p style="text-align: left; mb-2"><%= "Building size: #{@property.size_building} sq m" %></p>
