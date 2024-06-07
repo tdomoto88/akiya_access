@@ -3,3 +3,30 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* Centering the h1 text */
+h1 {
+  text-align: center;
+}
+
+/* Ensuring the iframe takes full vertical space */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.form-container .form-actions {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container iframe {
+  flex-grow: 1;
+  border: none;
+}
+
+.consultation-img {
+  border-radius: 10px;
+}

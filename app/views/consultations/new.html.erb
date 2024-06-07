@@ -1,47 +1,40 @@
-<h1>Consultation Page</h1>
-<p>Find me in app/views/consultations/new.html.erb</p>
-<div style="width: 100%; height: 100%; background: #D9D9D9; display: flex; justify-content: center; align-items: center;">
-  <div style="width: 80%; padding: 20px; background: white; border-radius: 10px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div style="padding: 20px;">
-            <%= simple_form_for [@property, @consultation] do |f| %>
-              <div class="form-actions mt-3 mb-3">
-                <h5>Calendar</h5>
-                <iframe
-                  src="https://calendly.com/tdomoto88/meeting-with-yoshi"
-                  width="100%" height="300px">
-                </iframe>
-                <div class="d-flex justify-content-between">
-                  <div class="form-group mb-3">
-                    <label for="firstname" class="form-label">Firstname</label>
-                    <input type="text" class="form-control" placeholder="Firstname" aria-label="Firstname" id="firstname">
-                  </div>
-                  <div class="form-group mb-3">
-                    <label for="lastname" class="form-label">Lastname</label>
-                    <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname" id="lastname">
-                  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Page</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Header -->
+    <h1>Consultation Page</h1>
+
+    <!-- Main Container with Centered Content -->
+    <div style="width: 100%; height: 100%; background: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+        <!-- Inner Container with White Background and Padding -->
+        <div style="width: 80%; padding: 20px; background: white; border-radius: 10px;">
+            <div class="container">
+                <div class="row">
+                    <!-- Left Column: Form Section -->
+                    <div class="col-md-7 form-container">
+                      <h5>Book your consultation below:</h5>
+                      <!-- Embedded Calendly Iframe for Scheduling -->
+                      <iframe
+                          src="https://calendly.com/tdomoto88/meeting-with-yoshi"
+                          width="100%"
+                          height="100%">
+                      </iframe>
+                    </div>
+
+                    <!-- Right Column: Image Section -->
+                    <div class="col-md-5">
+                        <img src="https://media1.thrillophilia.com/filestore/zhi5cd01p7wgj7gjtizf3oh8apdu_1616592423_shutterstock_312911786.jpg" class="consultation-img" alt="Consultation Image">
+                    </div>
                 </div>
-                <div class="form-group mb-3">
-                  <div>
-                    <label for="email" class="form-label">Email</label>
-                  </div>
-                  <input type="text" class="form-control" placeholder="email" id="email" aria-label="Email" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-text">Your message</span>
-                  <textarea class="form-control" aria-label="Your message"></textarea>
-                </div>
-                <%= f.button :submit, "Send", class: "btn btn-primary" %>
-              </div>
-            <% end %>
-          </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <img src="https://media1.thrillophilia.com/filestore/zhi5cd01p7wgj7gjtizf3oh8apdu_1616592423_shutterstock_312911786.jpg" class="consultation-img">
-        </div>
-      </div>
     </div>
-  </div>
-</div>
+</body>
+</html>
