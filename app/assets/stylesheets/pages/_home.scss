@@ -18,11 +18,22 @@
 
 .card-container {
  display: flex;
- justify-content: center;
+ justify-content: space-evenly;
 }
 
 .card-content {
-  padding: 10px;
+  display: flex;
+  width: 300px;
+  height: 500px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--Card-Div, #AF8260);
+  flex: 1 0 21%; /* Flex properties to adjust card size */
+  max-width: 100%; /* Ensure the card does not exceed this width */
+  position: relative;
+  overflow: hidden; /* Optional: Ensures the content doesn't overflow the card */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card h3 {
@@ -35,7 +46,9 @@
   color: #322C2B;
 }
 
-.button-outline {color: black;}
+.button-outline {
+  color: black;
+}
 
 .form-control.rounded-pill {
   border-radius: 50px;
