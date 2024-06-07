@@ -1,4 +1,5 @@
 <div class="card-search-result">
+  <%= render "favourites/actions", property: property %>
   <a href="<%= property_path(property)%>" class="card-link">
     <%= cl_image_tag(property.photo.key, width: 238, height: 240, crop: :fill) %>
     <br>

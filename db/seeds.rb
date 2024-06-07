@@ -41,7 +41,8 @@ properties = [
     photo_filename: "akiya.png",
     size_building: 100,
     size_land: 200,
-    views: 100
+    views: 100,
+    property_type: "Akiya"
   },
   {
     price: 11466, age: 1926, city: "Kyoto", prefecture: "Kyoto",
@@ -52,7 +53,8 @@ properties = [
     photo_filename: "akiya2.png",
     size_land: 200,
     size_building: 120,
-    views: 100
+    views: 100,
+    property_type: "Akiya"
   },
   {
     price: 22296, age: 1965, city: "Kyoto", prefecture: "Kyoto",
@@ -63,7 +65,8 @@ properties = [
     photo_filename: "akiya3.png",
     size_land: 200,
     size_building: 100,
-    views: 100
+    views: 100,
+    property_type: "Machiya"
   },
   {
     price: 15858, age: 1971, city: "Kyoto", prefecture: "Kyoto",
@@ -74,7 +77,8 @@ properties = [
     photo_filename: "akiya4.png",
     size_land: 200,
     size_building: 80,
-    views: 100
+    views: 100,
+    property_type: "Machiya"
   },
   {
     price: 10783, age: 1933, city: "Osaka", prefecture: "Osaka",
@@ -85,7 +89,8 @@ properties = [
     photo_filename: "akiya5.png",
     size_land: 200,
     size_building: 150,
-    views: 100
+    views: 100,
+    property_type: "Kominka"
   },
   {
     price: 19029, age: 1983, city: "Nantan", prefecture: "Kyoto",
@@ -96,7 +101,8 @@ properties = [
     photo_filename: "akiya6.png",
     size_land: 200,
     size_building: 50,
-    views: 100
+    views: 100,
+    property_type: "Kominka"
   },
   {
     price: 14589, age: 1955, city: "Moriguchi", prefecture: "Osaka",
@@ -107,7 +113,8 @@ properties = [
     photo_filename: "akiya7.png",
     size_land: 200,
     size_building: 100,
-    views: 100
+    views: 100,
+    property_type: "Akiya"
   },
   {
     price: 12686, age: 1969, city: "Hino", prefecture: "Tottori",
@@ -118,7 +125,8 @@ properties = [
     photo_filename: "akiya8.png",
     size_land: 200,
     size_building: 100,
-    views: 100
+    views: 100,
+    property_type: "Akiya"
   },
   {
     price: 748493, age: 1992, city: "Osaka", prefecture: "Osaka",
@@ -129,7 +137,8 @@ properties = [
     photo_filename: "akiya9.png",
     size_land: 200,
     size_building: 100,
-    views: 100
+    views: 100,
+    property_type: "Akiya"
   },
   {
     price: 302569, age: 2021, city: "Nishinomiya", prefecture: "Hyogo",
@@ -140,7 +149,8 @@ properties = [
     photo_filename: "akiya10.png",
     size_land: 200,
     size_building: 100,
-    views: 100
+    views: 100,
+    property_type: "Akiya"
   }
 ]
 
