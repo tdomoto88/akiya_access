@@ -11,9 +11,21 @@
     <p><%= link_to "FAQs", root_path %></p>
   </div>
   <div class="AA-navbar-right">
-    <p><%= link_to favourites_path do %>
-    <i class="fa-regular fa-heart fa-lg"></i>
-    <% end %>
+    <div class="dropdown">
+      <button
+      class="btn btn-secondary dropdown-toggle dropdown-circle"
+      type="button"
+      id="dropdownMenuButton2"
+      data-bs-toggle="dropdown"
+      aria-expanded="false">
+    <i class="fas fa-bars"></i>
+      </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <li><%= link_to "Login", user_session_path %></li>
+    <li><%= link_to "Book a consultation", consultations_path %></li>
+    <%# I NEED TO SET VALIDATIONS FOR WHEN A USER IS SIGNED IN SO THAT THEY CAN HAVE A "VIEW FAVOURITES" AND "VIEW BOOKINGS" %>
+  </ul>
+</div>
     </p>
     <!-- LANCE: I will Add space for logout and avatar dropdown which will include "add a property" later -->
   </div>
