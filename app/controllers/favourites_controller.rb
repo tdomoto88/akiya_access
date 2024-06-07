@@ -9,7 +9,7 @@ class FavouritesController < ApplicationController
     favourite.property = property
     favourite.user = current_user
     if favourite.save
-      redirect_to favourites_path
+      redirect_to request.referer
     else
       @properties = Property.all
       p favourite.errors.messages

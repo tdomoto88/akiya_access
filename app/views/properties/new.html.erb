@@ -1,6 +1,6 @@
 <div class='new-property'>
   <h1>List Your Property</h1>
-  <h5>Please enter the details of your property</h5>
+  <h5 class="text-center">Please enter the details of your property</h5>
   <div class="content container d-flex justify-content-center">
     <%= simple_form_for [@property] do |f| %>
       <div class="form-inputs">
@@ -45,10 +45,10 @@
                     size: '70x5',
                     required: true,
                     input_html: { autocomplete: "description"}%>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       </div>
 
-      <div class="form-actions">
+      <div class="form-actions text-center">
           <%= f.button :submit, "Add property", class: 'button' %>
       </div>
     <% end %>

@@ -5,9 +5,9 @@
       <div id="property-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <% if @property.photo.attached? %>
-      <%= cl_image_tag(@property.photo.key, class: "d-block w-100") %>
-    <% end %>
+            <% unless @property.photos.empty? %>
+              <%= cl_image_tag(@property.photos.first.key, class: "d-block w-100") %>
+            <% end %>
             <div class="carousel-caption left-caption">
               <% if @property.present? %>
                 <div class="caption-box">

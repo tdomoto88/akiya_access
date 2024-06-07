@@ -23,8 +23,8 @@
 
   <% @properties.each do |property| %>
       <div class="card">
-      <% if property.photo.attached? %>
-        <%= cl_image_tag(property.photo.key,
+      <% unless property.photos.empty? %>
+        <%= cl_image_tag(property.photos.first.key,
           width: 400, height: 300, crop: :fill) %>
       <% end %>
 
