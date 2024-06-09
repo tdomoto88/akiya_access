@@ -35,13 +35,15 @@
             <% unless property.photos.empty? %>
               <div class="card">
                 <div class="card-content">
+                 <a href="<%= property_path(property)%>" class="card-link">
                   <%= cl_image_tag(property.photos.first.key, width: 350, height: 300, crop: :fill) %>
+                  <br>
+                  <br>
                   <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
-                  <p class="text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-                  <p class="text-center">
-                    <%= link_to "More info", property_path(property), class:"button-outline" %>
-                    <%= render "favourites/actions", property: property, user: current_user %>
-                  </p>
+                  <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+                  <br>
+
+                 </a>
                 </div>
               </div>
             <% end %>

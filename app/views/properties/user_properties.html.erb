@@ -1,3 +1,22 @@
 <h1>Your Properties</h1>
 
- <%= render "list", properties: @properties %>
+ <div class="property-grid">
+    <% if @properties.any? %>
+      <% @properties.each do |property| %>
+        <div class="card-search-result">
+          <a href="<%= property_path(property)%>" class="card-link">
+            <%= cl_image_tag(property.photos.first.key, width: 238, height: 240, crop: :fill) %>
+            <br>
+            <br>
+            <span class="prefecture">
+              <p class="text-center"><%= property.city %>,
+              <%= property.prefecture %></span></p>
+            <p class="property-info text-center">
+              <%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+          </a>
+        </div>
+      <% end %>
+     <% else %>
+        <p>You have no properties listed.</p>
+      <% end %>
+  </div>
