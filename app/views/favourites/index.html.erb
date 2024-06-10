@@ -1,8 +1,19 @@
 
 <h1 class="text-center">Favourites</h1>
 <p class="text-center">Select your dream house in Japan</p>
-<div class="property-grid">
-  <% @favourites.each do |favourite| %>
-    <%= render "properties/property", property: favourite.property %>
-  <% end %>
-</div>
+<div class="row">
+  <div class="col-7">
+    <div class="property-grid">
+      <% @favourites.each do |favourite| %>
+        <%= render "properties/property", property: favourite.property %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-5">
+    <div id="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div> <!-- Close Right Column -->
+</div> <!-- Close Row -->

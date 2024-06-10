@@ -1,6 +1,17 @@
 class FavouritesController < ApplicationController
   def index
     @favourites = Favourite.where(user: current_user)
+
+    fav_properties = Property.includes(:favourites).where(favourites: { user: current_user })
+
+    @markers = fav_properties.geocoded.map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude,
+        info_window_html: render_to_string(partial: "properties/info_window", locals: {property: property}),
+        marker_html: render_to_string(partial: "properties/marker", locals: {property: property})
+      }
+    end
   end
 
   def create

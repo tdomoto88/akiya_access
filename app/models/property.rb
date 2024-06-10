@@ -2,7 +2,7 @@ class Property < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many_attached :photos
-  has_many :favourites
+  has_many :favourites, dependent: :destroy
 
   geocoded_by :address
 
