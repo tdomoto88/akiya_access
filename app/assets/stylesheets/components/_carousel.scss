@@ -4,3 +4,9 @@
   margin: auto;
   border-radius: 10px;
 }
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  color: white;
+}

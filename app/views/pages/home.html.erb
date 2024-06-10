@@ -1,34 +1,31 @@
 <div class="overlay-container">
   <div class="title-home">
     <h1 id="enlarged-text" class="text-center">空き家<br>アクセス</h1>
+    <h2 id="AA-main-title" class="text-center">Akiya Access</h2>
   </div>
 </div>
-  <h1 id="AA-main-title">Akiya Access</h1>
-    <h5 class="text-center">Find Your Dream Home in Japan</h5>
-  <div class="row justify-content-center">
-    <div class="col-sm-4 my-2">
-      <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control rounded-pill me-2",
-              placeholder: "Type a keyword"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+<h4 class="text-center">Discover Your Dream Home in Japan</h4>
+
+<div class="row justify-content-center">
+  <div class="col-sm-4 my-2">
+    <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query, params[:query], class: "form-control rounded-pill me-2", placeholder: "Your journey begins here..." %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
   </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner"><h5>Featured Akiya:</h5>
+
     <% @properties.each_slice(3) do |properties| %>
-      <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="5000">
+      <div class="carousel-item <%= properties.first == @properties.first ? "active" : "" %>" data-bs-interval="5000">
         <div class="card-container">
           <% properties.each do |property| %>
             <% unless property.image_urls.empty? %>
@@ -41,7 +38,6 @@
                   <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
                   <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
                   <br>
-
                  </a>
                 </div>
               </div>
@@ -51,6 +47,7 @@
       </div>
     <% end %>
   </div>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
