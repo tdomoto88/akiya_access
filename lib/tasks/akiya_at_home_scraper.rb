@@ -16,8 +16,19 @@ class AkiyaAtHomeScraper
         flex = element.search('.flex')
         # p flex
         bedrooms = flex.search('li:nth-child(2)')
-        no_of_bedrooms = bedrooms.search('dd').text.strip
-        properties << { price: price, bedrooms: no_of_bedrooms }
+        no_of_bedrooms = bedrooms.search('dd').text.strip.to_i
+        size_building = flex.search('li:nth-child(3)')
+        no_of_size = size_building.search('dd').text.strip.to_i
+        size_land = flex.search('li:nth-child(4)')
+        no_of_land = size_land.search('dd').text.strip.to_i
+
+        all = element.search('.all')
+        age = all.search('li:nth-child(1)')
+        no_of_age = age.search('dd').text.strip.to_i
+        address = all.search('li:nth-child(2)')
+        address_details = address.search('dd').text.strip
+
+        properties << { price: price, bedrooms: no_of_bedrooms, size_building: no_of_size, size_land: no_of_land, age: no_of_age, address: address_details }
 
         # puts '---'
       end
