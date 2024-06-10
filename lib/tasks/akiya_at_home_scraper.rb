@@ -42,3 +42,4 @@ class AkiyaAtHomeScraper
 
   end
 end
+# run rails scraper:akiya_at_home
