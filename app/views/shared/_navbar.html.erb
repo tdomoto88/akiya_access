@@ -6,41 +6,35 @@
   </div>
   <div class="AA-navbar-center">
     <p><%= link_to "Home", root_path %></p>
-     <%# LANCE: I will add other link_to paths later when they're ready  %>
-    <p><%= link_to "Services Packages", root_path %></p>
+    <p><%= link_to "Services Packages", services_path %></p>
     <p><%= link_to "FAQs", faqs_path %></p>
   </div>
   <div class="AA-navbar-right">
     <div class="dropdown">
       <button
-      class="dropdown <%= user_signed_in? ? "logged-in" : "btn dropdown-circle toggle-button" %>"
-      type="button"
-      id="dropdownMenuButton2"
-      data-bs-toggle="dropdown"
-      aria-expanded="false">
-      <% unless user_signed_in? %>
-      <i class="fas fa-bars">
-      <% end %>
-
-    </i>
+        class="dropdown <%= user_signed_in? ? "logged-in" : "btn dropdown-circle toggle-button" %>"
+        type="button"
+        id="dropdownMenuButton2"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <% unless user_signed_in? %>
+          <i class="fas fa-bars"></i>
+        <% end %>
       </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <% if user_signed_in? && current_user.is_owner == true %>
-      <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" } %></li>
-      <li><%= link_to "View Favourites", favourites_path %></li>
-      <li><%= link_to "Add a property", new_property_path %></li>
-      <li><%= link_to "Your Properties", user_properties_path %></li>
-    <% elsif user_signed_in? && current_user.is_owner == false %>
-      <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" } %></li>
-      <li><%= link_to "View Favourites", favourites_path %></li>
-    <% else %>
-      <li><%= link_to "Login", user_session_path %></li>
-      <li><%= link_to "sign up", new_user_registration_path %></li>
-    <% end %>
-    <%# I NEED TO SET VALIDATIONS FOR WHEN A USER IS SIGNED IN SO THAT THEY CAN HAVE A "VIEW FAVOURITES" AND "VIEW BOOKINGS" %>
-  </ul>
-</div>
-    </p>
-    <!-- LANCE: I will Add space for logout and avatar dropdown which will include "add a property" later -->
+      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        <% if user_signed_in? && current_user.is_owner %>
+          <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" } %></li>
+          <li><%= link_to "View Favourites", favourites_path %></li>
+          <li><%= link_to "Add a property", new_property_path %></li>
+          <li><%= link_to "Your Properties", user_properties_path %></li>
+        <% elsif user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" } %></li>
+          <li><%= link_to "View Favourites", favourites_path %></li>
+        <% else %>
+          <li><%= link_to "Login", user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
