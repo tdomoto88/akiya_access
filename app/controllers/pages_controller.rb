@@ -3,4 +3,6 @@ class PagesController < ApplicationController
   def home
     @properties = Property.all
   end
+  def services
+  end
 end
