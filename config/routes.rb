@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   get "/user_properties", to: 'properties#user_properties', as: 'user_properties'
+  get "/faqs", to: 'pages#faqs', as: 'faqs'
 end
 
 # HUGH'S CUSTOM ROUTES THAT I AM UNSURE WHETHER WE WILL KEEP
