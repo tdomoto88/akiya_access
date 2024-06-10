@@ -5,7 +5,7 @@
       <% @properties.each do |property| %>
         <div class="card-search-result">
           <a href="<%= property_path(property)%>" class="card-link">
-            <%= cl_image_tag(property.photos.first.key, width: 238, height: 240, crop: :fill) %>
+            <img src="<%= property.image_urls.first %>" alt="" class="d-block w-100" width="238" height="240">
             <br>
             <br>
             <span class="prefecture">
