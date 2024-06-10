@@ -3,6 +3,16 @@ class Property < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many_attached :photos
   has_many :favourites
+  has_many :images
+
+  def image_urls
+    urls = images.map { |img| img.url }
+    photos.each do |photo|
+      urls << "https://res.cloudinary.com/dna9z7j4z/image/upload/v1/#{ENV["RAILS_ENV"]}/#{photo.key}"
+    end
+    urls
+  end
+
 
   geocoded_by :address
 

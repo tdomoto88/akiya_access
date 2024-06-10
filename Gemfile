@@ -82,3 +82,6 @@ gem "cloudinary"
 
 
 gem "geocoder"
+
+gem 'nokogiri'
+gem 'httparty'
