@@ -1,26 +1,25 @@
 <div class="overlay-container">
   <div class="title-home">
     <h1 id="enlarged-text" class="text-center">空き家<br>アクセス</h1>
+    <h2 id="AA-main-title" class="text-center">Akiya Access</h2>
   </div>
 </div>
-<h1 id="AA-main-title">Akiya Access</h1>
-<h5 class="text-center">Find Your Dream Home in Japan</h5>
 <div class="row justify-content-center">
+  <h4 id="AA-sub-title" class="text-center">Discover Your Dream Home in Japan</h4>
   <div class="col-sm-4 my-2">
     <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query, params[:query], class: "form-control rounded-pill me-2", placeholder: "Type a keyword" %>
+      <%= text_field_tag :query, params[:query], class: "form-control rounded-pill me-2", placeholder: "Your journey begins here..." %>
       <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <% end %>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h5 id="AA-sub-title" class="text-center">Featured Properties</h5>
 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <% @properties.each_slice(3) do |properties| %>
