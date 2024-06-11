@@ -1,18 +1,48 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
 <div class="overlay-container">
   <div class="title-home">
     <h1 id="enlarged-text" class="text-center">空き家<br>アクセス</h1>
     <h2 id="AA-main-title" class="text-center">Akiya Access</h2>
   </div>
 </div>
+
 <div class="row justify-content-center">
   <h4 id="AA-sub-title" class="text-center">Discover Your Dream Home in Japan</h4>
-  <div class="col-sm-4 my-2">
-    <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query, params[:query], class: "form-control rounded-pill me-2", placeholder: "Your journey begins here..." %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <div class="col-sm-8 my-2">
+    <%= form_with url: properties_path, method: :get, class: "row justify-content-center" do %>
+      <div class="col-md-6">
+        <%= text_field_tag :query, params[:query], class: "form-control rounded-pill", placeholder: "Search by Prefecture", id: "prefecture-search" %>
+      </div>
+      <div class="col-md-2">
+        <%= submit_tag "Search", name: "", class: "btn btn-primary w-100" %>
+      </div>
     <% end %>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    var prefectures = [
+      "Hokkaido", "Aomori", "Iwate", "Miyagi", "Akita", "Yamagata", "Fukushima",
+      "Ibaraki", "Tochigi", "Gunma", "Saitama", "Chiba", "Tokyo", "Kanagawa",
+      "Niigata", "Toyama", "Ishikawa", "Fukui", "Yamanashi", "Nagano",
+      "Gifu", "Shizuoka", "Aichi", "Mie", "Shiga", "Kyoto", "Osaka", "Hyogo",
+      "Nara", "Wakayama", "Tottori", "Shimane", "Okayama", "Hiroshima", "Yamaguchi",
+      "Tokushima", "Kagawa", "Ehime", "Kochi", "Fukuoka", "Saga", "Nagasaki",
+      "Kumamoto", "Oita", "Miyazaki", "Kagoshima", "Okinawa"
+    ];
+
+    $("#prefecture-search").autocomplete({
+      source: prefectures,
+      minLength: 2
+    });
+  });
+</script>
 
 <br>
 <br>

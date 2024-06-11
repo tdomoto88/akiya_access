@@ -8,6 +8,15 @@ class PropertiesController < ApplicationController
       sql_subquery = "city ILIKE :query OR prefecture ILIKE :query"
       @properties = @properties.where(sql_subquery, query: "%#{params[:query]}%")
     end
+    if params[:bedrooms].present?
+      @properties = @properties.where("bedrooms >= ?", params[:bedrooms])
+    end
+    if params[:min_price].present?
+      @properties = @properties.where("price >= ?", params[:min_price].to_f)
+    end
+    if params[:max_price].present?
+      @properties = @properties.where("price <= ?", params[:max_price].to_f)
+    end
 
     @markers = @properties.geocoded.map do |property|
       {
