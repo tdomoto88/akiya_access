@@ -68,3 +68,30 @@ p {
   font-size: 12px;
   margin: 0 0 0px;
 }
+
+.auth-buttons {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+  align-items: center; /* Vertically center the buttons */
+  justify-content: center; /* Center the buttons horizontally */
+  width: 100%; /* Ensure the container takes up the full width */
+}
+
+.signup-button, .login-button {
+  background-color: black; /* Black background */
+  padding: 10px; /* 15px padding */
+  margin: 10px; /* 10px margin */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* White text */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the link look like a button */
+  font-size: 14px; /* Adjust font size as needed */
+  cursor: pointer; /* Pointer/hand icon */
+}
+
+.signup-button:hover, .login-button:hover {
+  background-color: rgb(99, 98, 98); /* Darker gray on hover */
+  color: rgb(255, 255, 255); /* White text */
+  transition: 1s; /* 1 second transition */
+}
