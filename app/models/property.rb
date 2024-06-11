@@ -27,6 +27,14 @@ class Property < ApplicationRecord
       end
   end
 
+  # def geocode_property
+  #   if latitude.nil? || longitude.nil?
+  #     lat_long = geocode
+  #     latitude = lat_long.first
+  #     longitude = lat_long.last
+  #   end
+  # end
+
 
   def favourited_by(user)
     Favourite.find_by(user: user, property: self)
