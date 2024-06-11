@@ -4,7 +4,7 @@ class Property < ApplicationRecord
   has_many_attached :photos
 
 
-  has_many :images
+  has_many :images, dependent: :destroy
 
   def image_urls
     urls = images.map { |img| img.url }
