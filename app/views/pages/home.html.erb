@@ -26,20 +26,7 @@
       <div class="carousel-item <%= properties.first == @properties.first ? "active" : "" %>" data-bs-interval="5000">
         <div class="card-container">
           <% properties.each do |property| %>
-            <% if property.photos.any? %>
-              <div class="card">
-                <div class="card-content">
-                 <a href="<%= property_path(property)%>" class="card-link">
-                  <img src="<%= property.image_urls.first %>" alt="" class="d-block w-100 img" width="350" height="300">
-                  <br>
-                  <br>
-                  <p class="text-center"><%= Geocoder.search([property.latitude, property.longitude]).first.city %>, <%= property.prefecture %></p>
-                  <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-                  <br>
-                 </a>
-                </div>
-              </div>
-            <% elsif property.image_urls.any? %>
+            <% if property.image_urls.any? %>
               <div class="card">
                 <div class="card-content">
                   <a href="<%= property_path(property) %>" class="card-link">
