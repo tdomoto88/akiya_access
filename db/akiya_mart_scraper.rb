@@ -20,7 +20,7 @@ properties.each do |property|
   address: property['translated_address'],
   latitude: details['lat'],
   longitude: details['lon'],
-  city: 'Nagano',
+  city: Geocoder.search([details['lat'], details['lon']]).first.city,
   bedrooms: 4,
   bathrooms: 2,
   description: details['llm_description'],
