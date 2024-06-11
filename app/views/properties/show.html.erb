@@ -16,10 +16,14 @@
             <p class="text-start"><%= "#{@property.bedrooms} #{@property.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}" %></p>
             <i class="fa-solid fa-shower me-3 float-start"></i>
             <p class="text-start"><%= "#{@property.bathrooms} #{@property.bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}" %></p>
+            <% if @property.size_building > 0 %>
             <i class="fa-solid fa-square me-3 float-start"></i>
             <p class="text-start mb-2"><%= "Building size: #{@property.size_building} sq m" %></p>
+            <% end %>
+            <% if @property.size_land > 0 %>
             <i class="fa-regular fa-square me-3 float-start"></i>
             <p class="text-start mb-2"><%= "Land size: #{@property.size_land} sq m" %></p>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -58,7 +62,7 @@
             <i class="bi bi-share text-black mb-2"></i>
           </button>
         </div>
-          
+
       <% if @property.present? %>
         <div class="caption-box">
           <div class="mt-3 mb-3">
