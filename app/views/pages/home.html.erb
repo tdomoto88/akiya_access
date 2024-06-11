@@ -22,7 +22,8 @@
 <br>
 
 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-inner"><h5>Featured Akiya:</h5>
+  <div class="carousel-inner"><h5 class="feature">Featured Akiya:</h5>
+    <br>
 
     <% @properties.each_slice(3) do |properties| %>
       <div class="carousel-item <%= properties.first == @properties.first ? "active" : "" %>" data-bs-interval="5000">
