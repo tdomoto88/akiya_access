@@ -16,6 +16,7 @@ class AkiyaAtHomeScraper
         photo_url = "https:#{photo_url}" unless photo_url.start_with?('http')
         # p photo_url
         price = element.search('.price').search('span').text.strip
+        price_usd = jpy_to_usd(price)
         # p price
         flex = element.search('.flex')
         # p flex
@@ -32,7 +33,7 @@ class AkiyaAtHomeScraper
         address = all.search('li:nth-child(2)')
         address_details = address.search('dd').text.strip
 
-        properties << { photo_url: photo_url, price: price, bedrooms: no_of_bedrooms, size_building: no_of_size, size_land: no_of_land, age: no_of_age, address: address_details }
+        properties << { photo_url: photo_url, price: price_usd, bedrooms: no_of_bedrooms, size_building: no_of_size, size_land: no_of_land, age: no_of_age, address: address_details }
 
         # puts '---'
       end
@@ -40,5 +41,12 @@ class AkiyaAtHomeScraper
 
       return properties
 
+  end
+
+  private
+
+  def self.jpy_to_usd(price_jpy)
+    exchange_rate = 0.0064
+    (price_jpy.to_i * exchange_rate * 10_000).to_i
   end
 end
