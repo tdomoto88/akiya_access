@@ -2,10 +2,6 @@ require_relative "boot"
 
 require "rails/all"
 
-# Lance's attempt to scrape from akiya-at-home.jp
-# require './lib/scrapers/akiya_at_home_scraper'
-# AkiyaAtHomeScraper.scrape_listings
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

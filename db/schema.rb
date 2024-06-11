@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_06_11_020626) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +75,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_020626) do
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "url"
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_images_on_property_id"
+  end
+
   create_table "properties", force: :cascade do |t|
     t.float "price"
     t.integer "age"
@@ -125,5 +134,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_020626) do
   add_foreign_key "consultations", "users"
   add_foreign_key "favourites", "properties"
   add_foreign_key "favourites", "users"
+  add_foreign_key "images", "properties"
   add_foreign_key "properties", "users"
 end

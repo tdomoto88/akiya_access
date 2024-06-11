@@ -82,7 +82,7 @@ gem "cloudinary"
 
 gem "geocoder"
 
-gem "nokogiri"
-gem "httparty"
 
-gem 'whenever', require: false
+gem 'nokogiri'
+gem 'httparty'
+
