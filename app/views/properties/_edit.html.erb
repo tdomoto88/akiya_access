@@ -1,0 +1,47 @@
+<h5 class="text-center">You can modify the details of your property</h5>
+  <div class="content container d-flex justify-content-center">
+    <%= simple_form_for [@property] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :price,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "price" }%>
+        <%= f.input :property_type,
+                    collection: ['Akiya', 'Machiya', 'Kominka'],
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :age,
+                    required: true,
+                    input_html: { autocomplete: "age"}%>
+        <%= f.input :city,
+                    required: true,
+                    input_html: { autocomplete: "city"}%>
+        <%= f.input :prefecture,
+                    required: true,
+                    collection: ["Hokkaido", "Aomori", "Iwate", "Miyagi", "Akita", "Yamagata", "Fukushima", "Ibaraki", "Tochigi", "Gunma", "Saitama", "Chiba", "Tokyo", "Kanagawa", "Niigata", "Toyama", "Ishikawa", "Fukui", "Yamanashi", "Nagano", "Gifu", "Shizuoka", "Aichi", "Mie", "Shiga", "Kyoto", "Osaka", "Hyogo", "Nara", "Wakayama", "Tottori", "Shimane", "Okayama", "Hiroshima", "Yamaguchi", "Tokushima", "Kagawa", "Ehime", "Kochi", "Fukuoka", "Saga", "Nagasaki", "Kumamoto", "Oita", "Miyazaki", "Kagoshima", "Okinawa"],
+                    input_html: { autocomplete: "prefecture"} %>
+        <%= f.input :address,
+                    required: true,
+                    input_html: { autocomplete: "address"}%>
+        <%= f.input :bedrooms,
+                    required: true,
+                    input_html: { autocomplete: "bedrooms"}%>
+        <%= f.input :bathrooms,
+                    required: true,
+                    input_html: { autocomplete: "bathrooms"}%>
+        <%= f.input :size_building,
+                    label: 'Size of Building',
+                    placeholder: 'sq m',
+                    required: true %>
+        <%= f.input :size_land,
+                    label: 'Size of Land',
+                    placeholder: 'sq m',
+                    required: true %>
+
+        <%= f.input :description,
+                    label: 'Description',
+                    size: '70x5',
+                    required: true,
+                    input_html: { autocomplete: "description"}%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </div>
