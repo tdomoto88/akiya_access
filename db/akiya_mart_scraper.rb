@@ -10,17 +10,22 @@ properties = JSON.parse(serialized_properties)['results']['listings']
 scraper = User.create!(first_name: "Scrape", last_name: "Scrapey", email: "scrape@gmail.com", password: "123456", is_owner: true)
 
 properties.each do |property|
+  url = "https://www.akiya-mart.com/listings/id/#{property['listing_id']}?currency=usd"
+  serialized_details = URI.open(url).read
+  details = JSON.parse(serialized_details)['results']
   puts property['prefecture']
   new_property = Property.new(age: property['construction_year'],
   prefecture: property['prefecture'].capitalize,
   price: property['price_foreign'],
   address: property['translated_address'],
+  latitude: details['lat'],
+  longitude: details['lon'],
   city: 'Nagano',
   bedrooms: 4,
   bathrooms: 2,
-  description: 'Great Akiya',
-  size_building: 200,
-  size_land: 500,
+  description: details['llm_description'],
+  size_building: details['building_area'].to_i,
+  size_land: details['land_area'].to_i,
   views: 0,
   property_type: 'Akiya',
   user: scraper)

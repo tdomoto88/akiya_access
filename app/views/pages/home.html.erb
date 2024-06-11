@@ -35,7 +35,7 @@
                   <img src="<%= property.image_urls.first %>" alt="" class="d-block w-100 img" width="350" height="300">
                   <br>
                   <br>
-                  <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
+                  <p class="text-center"><%= Geocoder.search([property.latitude, property.longitude]).first.city %>, <%= property.prefecture %></p>
                   <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
                   <br>
                  </a>

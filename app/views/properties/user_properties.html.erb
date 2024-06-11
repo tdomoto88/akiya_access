@@ -9,7 +9,7 @@
             <br>
             <br>
             <span class="prefecture">
-              <p class="text-center"><%= property.city %>,
+              <p class="text-center"><%= Geocoder.search([property.latitude, property.longitude]).first.city %>,
               <%= property.prefecture %></span></p>
             <p class="property-info text-center">
               <%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
