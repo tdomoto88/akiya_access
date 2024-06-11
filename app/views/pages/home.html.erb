@@ -3,50 +3,54 @@
     <h1 id="enlarged-text" class="text-center">空き家<br>アクセス</h1>
   </div>
 </div>
-  <h1 id="AA-main-title">Akiya Access</h1>
-    <h5 class="text-center">Find Your Dream Home in Japan</h5>
-  <div class="row justify-content-center">
-    <div class="col-sm-4 my-2">
-      <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control rounded-pill me-2",
-              placeholder: "Type a keyword"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<h1 id="AA-main-title">Akiya Access</h1>
+<h5 class="text-center">Find Your Dream Home in Japan</h5>
+<div class="row justify-content-center">
+  <div class="col-sm-4 my-2">
+    <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query, params[:query], class: "form-control rounded-pill me-2", placeholder: "Type a keyword" %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <% @properties.each_slice(3) do |properties| %>
-      <div class="carousel-item <%=properties.first==@properties.first ? "active":""%>" data-bs-interval="5000">
+      <div class="carousel-item <%= properties.first == @properties.first ? "active" : "" %>" data-bs-interval="5000">
         <div class="card-container">
           <% properties.each do |property| %>
-            <% unless property.photos.empty? %>
+            <% if property.photos.any? %>
               <div class="card">
                 <div class="card-content">
-                 <a href="<%= property_path(property)%>" class="card-link">
-                  <%= cl_image_tag(property.photos.first.key, width: 350, height: 300, crop: :fill) %>
-            <% unless property.image_urls.empty? %>
+                  <a href="<%= property_path(property) %>" class="card-link">
+                    <%= cl_image_tag(property.photos.first.key, width: 350, height: 300, crop: :fill) %>
+                    <br>
+                    <br>
+                    <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
+                    <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+                    <br>
+                  </a>
+                </div>
+              </div>
+            <% elsif property.image_urls.any? %>
               <div class="card">
                 <div class="card-content">
-                 <a href="<%= property_path(property)%>" class="card-link">
-                  <img src="<%= property.image_urls.first %>" alt="" class="d-block w-100 img" width="350" height="300">
-                  <br>
-                  <br>
-                  <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
-                  <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
-                  <br>
-                 </a>
+                  <a href="<%= property_path(property) %>" class="card-link">
+                    <img src="<%= property.image_urls.first %>" alt="" class="d-block w-100 img" width="350" height="300">
+                    <br>
+                    <br>
+                    <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
+                    <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+                    <br>
+                  </a>
                 </div>
               </div>
             <% end %>
