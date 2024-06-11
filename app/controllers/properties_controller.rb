@@ -8,6 +8,15 @@ class PropertiesController < ApplicationController
       sql_subquery = "city ILIKE :query OR prefecture ILIKE :query"
       @properties = @properties.where(sql_subquery, query: "%#{params[:query]}%")
     end
+    if params[:bedrooms].present?
+      @properties = @properties.where("bedrooms >= ?", params[:bedrooms])
+    end
+    if params[:min_price].present?
+      @properties = @properties.where("price >= ?", params[:min_price].to_f)
+    end
+    if params[:max_price].present?
+      @properties = @properties.where("price <= ?", params[:max_price].to_f)
+    end
 
     @markers = @properties.geocoded.map do |property|
       {
@@ -47,6 +56,16 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
     current_view_count = @property.views.nil? ? 0 : @property.views
     @property.update(views: current_view_count + 1)
+  end
+
+  def edit
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    @property = Property.find(params[:id])
+    @property.update(property_params) # Will raise ActiveModel::ForbiddenAttributesError
+    redirect_to user_properties_path(@property)
   end
 
   private

@@ -26,7 +26,11 @@ Rails.application.routes.draw do
 
   get "/subscribe", to: 'subscribers#create', as: 'subscribe'
 
-  delete "user_properties/:id", to: "properties#destroy", as: 'delete_user_property'
+  delete "properties/:id", to: "properties#destroy", as: 'delete_user_property'
+
+  get "/user_properties/edit", to: "properties#edit"
+
+  patch "/user_properties", to: "properties#update"
 
 end
 

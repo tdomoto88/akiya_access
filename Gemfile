@@ -85,3 +85,7 @@ gem "geocoder"
 
 gem 'nokogiri'
 gem 'httparty'
+
+gem 'easy_translate'
+# AIzaSyDd8pRatE4c1BvOrjo9xxDrkwHHm0izakk
+# gem "http"

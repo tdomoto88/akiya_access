@@ -122,3 +122,19 @@ p {
 .accordion-button::after {
   filter: invert(100%); /* Ensure the icon in the accordion button is visible */
 }
+
+.ui-autocomplete {
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  /* Prevent horizontal scrollbar */
+  overflow-x: hidden;
+  z-index: 1000;
+}
+.ui-menu-item {
+  cursor: pointer;
+}
+.ui-menu-item:hover {
+  background-color: #f0f0f0;
+}
