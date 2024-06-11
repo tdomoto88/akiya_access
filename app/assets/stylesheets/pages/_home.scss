@@ -52,6 +52,8 @@
 
 .form-control.rounded-pill {
   border-radius: 50px;
+   margin-top: auto;
+  margin-left: auto;
 }
 
 .btn-primary:hover {
@@ -62,4 +64,8 @@
 
 .img {
   object-fit: cover;
+}
+
+.feature {
+  margin-left: 95px;
 }

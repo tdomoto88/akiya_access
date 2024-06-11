@@ -18,24 +18,23 @@
 body {
   margin: 0;
   // padding: 20px;
-//  background-image: asset-url('AkiyaAccessBackground.jpg');
+  // background-image: asset-url('AkiyaAccessBackground.jpg');
   background-size: 130%; /* Ensures the image covers the entire background */
   background-color: #E4C59E;
-
+  color: #000000; /* Set default text color to black */
 }
 
 h1, h2, h3, h4, h5 {
   font-family: Inter;
   font-weight: bold;
   margin: 0 0 0px;
-  color: #000000;
+  color: #000000; /* Explicitly set headings to black */
 }
 
 h1 {
   margin: 0 0 0px;
   font-size: 67px;
 }
-
 
 h2 {
   margin: 0 0 0px;
@@ -61,10 +60,65 @@ p {
   font-family: Quicksand;
   font-size: 16px;
   margin: 0 0 0px;
+  color: #000000; /* Explicitly set paragraphs to black */
 }
 
 .caption {
   font-family: Quicksand;
   font-size: 12px;
   margin: 0 0 0px;
+  color: #000000; /* Explicitly set captions to black */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+  align-items: center; /* Vertically center the buttons */
+  justify-content: center; /* Center the buttons horizontally */
+  width: 100%; /* Ensure the container takes up the full width */
+}
+
+.signup-button, .login-button {
+  background-color: black; /* Black background */
+  padding: 10px; /* 15px padding */
+  margin: 10px; /* 10px margin */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* White text */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the link look like a button */
+  font-size: 14px; /* Adjust font size as needed */
+  cursor: pointer; /* Pointer/hand icon */
+}
+
+.signup-button:hover, .login-button:hover {
+  background-color: rgb(99, 98, 98); /* Darker gray on hover */
+  color: rgb(255, 255, 255); /* White text */
+  transition: 1s; /* 1 second transition */
+}
+
+/* Ensure all text elements inside .plan are black */
+.services .plan {
+  color: #000000;
+}
+
+.services .plan h3,
+.services .plan h4,
+.services .plan h5,
+.services .plan .price,
+.services .plan .features li {
+  color: #000000; /* Ensure all relevant text elements are black */
+}
+
+/* Ensure all text elements inside .accordion are black */
+.accordion .accordion-header,
+.accordion .accordion-button,
+.accordion .accordion-body,
+.accordion .list-group-item {
+  color: #000000;
+}
+
+/* Specific styles for the FAQ section */
+.accordion-button::after {
+  filter: invert(100%); /* Ensure the icon in the accordion button is visible */
 }

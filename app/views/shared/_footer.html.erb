@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-      <h4 class="mb-3">Akiya access</h4>
+      <h4 class="mb-3">Akiya Access</h4>
       <p class="mb-3">Re-imagine your dream home in Japan</p>
       <p>Join our community</p>
         <div>
@@ -31,17 +31,18 @@
       </div>
       <div class="col-4">
       <h5 class="mb-3">Explore</h5>
-      <p class="mb-3">Book a consultation</p>
-      <p class="mb-3">Rankings</p>
-      <p>Connect a wallet</p>
+      <p class="mb-3"><%= link_to "Services Packages", services_path %></p>
+      <p class="mb-3"><%= link_to "FAQs", faqs_path %></p>
+      <p class="mb-3"><%= link_to "Contact Us", "mailto:tdomoto88@gmail.com"  %></p>
       </div>
       <div class="col-4">
-      <h5 class="mb-3">Join our Monthly digest</h5>
-      <p class="mb-3">Get exclusive promotions & updates straight to your inbox.</p>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-      </div>
+        <h5 class="mb-3">Subscribe to Our Newsletter</h5>
+        <p class="mb-3">Get exclusive promotions & updates straight to your inbox.</p>
+        <form class="input-group mb-3" action="/subscribe">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" id="email" name="email">
+          <button type="submit" class="btn-dark">Subscribe</button>
+        </form>
       </div>
     </div>
   </div>

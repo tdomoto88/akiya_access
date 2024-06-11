@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
   get "/services", to: 'pages#services', as: 'services'
 
+  get "/subscribe", to: 'subscribers#create', as: 'subscribe'
+
+  delete "user_properties/:id", to: "properties#destroy", as: 'delete_user_property'
+
 end
 
 # HUGH'S CUSTOM ROUTES THAT I AM UNSURE WHETHER WE WILL KEEP
