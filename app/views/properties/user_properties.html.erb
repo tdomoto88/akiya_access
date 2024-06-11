@@ -5,16 +5,18 @@
       <% @properties.each do |property| %>
         <div class="card-search-result">
           <a href="<%= property_path(property)%>" class="card-link">
-            <%= cl_image_tag(property.photos.first.key, width: 238, height: 240, crop: :fill) %>
+            <%= cl_image_tag(property.photos.first.key, width: 238, height: 240, crop: :fill) unless property.photos.first.nil? %>
             <div class="d-flex justify-content-end w-100">
+            <%= link_to edit_property_path(property) do %>
               <i class="fa-solid fa-pen-to-square search_edit_delete"></i>
+              <% end %>
               <%= link_to delete_user_property_path(property),
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                 <i class="fa-solid fa-trash search_edit_delete"></i>
               <% end %>
             </div>
             <span class="prefecture">
-              <p class="text-center"><%= Geocoder.search([property.latitude, property.longitude]).first.city %>,
+              <p class="text-center"><%= property.city unless property.city.nil? %>,
               <%= property.prefecture %></span></p>
             <p class="property-info text-center">
               <%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>

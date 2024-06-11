@@ -55,7 +55,7 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
-    @property.update(params[:property]) # Will raise ActiveModel::ForbiddenAttributesError
+    @property.update(property_params) # Will raise ActiveModel::ForbiddenAttributesError
     redirect_to user_properties_path(@property)
   end
 
