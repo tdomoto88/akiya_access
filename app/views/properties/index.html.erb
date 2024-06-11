@@ -5,8 +5,46 @@
   <div class="col-7">
     <!-- Search Bar -->
     <%= form_with url: properties_path, method: :get, class: "d-flex mb-3" do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Type a keyword" %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <div class="col-md-3">
+        <%= text_field_tag :query, params[:query], class: "form-control rounded-pill", placeholder: "Search by Prefecture" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :bedrooms, params[:bedrooms], class: "form-control rounded-pill", placeholder: "Bedrooms" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :min_price, params[:min_price], class: "form-control rounded-pill", placeholder: "Min Price" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :max_price, params[:max_price], class: "form-control rounded-pill", placeholder: "Max Price" %>
+      </div>
+      <div class="col-md-3">
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Filter
+        </button>
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Filters</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="customRange1" class="form-label">Price range</label>
+              <input type="range" class="form-range" id="min_price" name="min_price">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Show</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
 
     <!-- Property Counter -->
