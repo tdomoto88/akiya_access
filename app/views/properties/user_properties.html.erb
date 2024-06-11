@@ -6,8 +6,13 @@
         <div class="card-search-result">
           <a href="<%= property_path(property)%>" class="card-link">
             <%= cl_image_tag(property.photos.first.key, width: 238, height: 240, crop: :fill) %>
-            <br>
-            <br>
+            <div class="d-flex justify-content-end w-100">
+              <i class="fa-solid fa-pen-to-square search_edit_delete"></i>
+              <%= link_to delete_user_property_path(property),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash search_edit_delete"></i>
+              <% end %>
+            </div>
             <span class="prefecture">
               <p class="text-center"><%= property.city %>,
               <%= property.prefecture %></span></p>

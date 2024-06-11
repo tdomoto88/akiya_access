@@ -36,7 +36,7 @@ class PropertiesController < ApplicationController
   def destroy
     property = Property.find(params[:id])
     property.destroy
-    redirect_to root_path
+    redirect_to user_properties_path, status: :see_other
   end
 
   def user_properties
