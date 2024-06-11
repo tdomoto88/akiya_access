@@ -49,6 +49,16 @@ class PropertiesController < ApplicationController
     @property.update(views: current_view_count + 1)
   end
 
+  def edit
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    @property = Property.find(params[:id])
+    @property.update(params[:property]) # Will raise ActiveModel::ForbiddenAttributesError
+    redirect_to user_properties_path(@property)
+  end
+
   private
 
   def property_params
