@@ -8,6 +8,7 @@ serialized_properties = File.read(filepath)
 properties = JSON.parse(serialized_properties)['results']['listings']
 
 scraper = User.create!(first_name: "Scrape", last_name: "Scrapey", email: "scrape@gmail.com", password: "123456", is_owner: true)
+User.create!(first_name: "Hugh", last_name: "Clayton", email: "hughgrassbyclayton@hotmail.com", password: "123456", is_owner: false)
 
 properties.each do |property|
   url = "https://www.akiya-mart.com/listings/id/#{property['listing_id']}?currency=usd"
