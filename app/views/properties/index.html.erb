@@ -25,63 +25,62 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="filter-container">
-                <div class="property-type my-3">
-                  <label>Property type</label>
-                  <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-                    <label class="btn btn-outline-dark flex-fill text-dark">
-                      <input type="radio" name="property_type" id="any" autocomplete="off">  Any
-                    </label>
-                    <label class="btn btn-outline-dark flex-fill text-dark">
-                      <input type="radio" name="property_type_akiya" id="akiya" autocomplete="off"> Akiya
-                    </label>
-                    <label class="btn btn-outline-dark flex-fill text-dark">
-                      <input type="radio" name="property_type_machiya" id="machiya" autocomplete="off"> Machiya
-                    </label>
-                    <label class="btn btn-outline-dark flex-fill text-dark">
-                      <input type="radio" name="property_type_kominka" id="kominka" autocomplete="off"> Kominka
-                    </label>
-                  </div>
+              <div class="property-type my-3">
+                <label>Property type</label>
+                <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="radio" name="property_type" id="any" autocomplete="off"> Any
+                  </label>
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="radio" name="property_type" id="akiya" autocomplete="off"> Akiya
+                  </label>
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="radio" name="property_type" id="machiya" autocomplete="off"> Machiya
+                  </label>
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="radio" name="property_type" id="kominka" autocomplete="off"> Kominka
+                  </label>
                 </div>
+              </div>
 
-                <div class="price-range">
-                  <label>Price range</label>
-                  <div class="price-inputs">
-                    <input type="text" class="form-control" id="min_price" name="min_price" placeholder="Min" oninput="syncRangeMin()">
-                    <input type="text" class="form-control" id="max_price" name="max_price" placeholder="Max" oninput="syncRangeMax()">
-                  </div>
-                  <div>
-                    <input type="range" class="form-control-range" id="priceRange" min="0" max="1000000" step="100">
-                  </div>
+              <div class="price-range">
+                <label>Price range</label>
+                <div class="price-inputs">
+                  <input type="text" class="form-control" id="min_price" name="min_price" placeholder="Min" oninput="syncRangeMin()">
+                  <input type="text" class="form-control" id="max_price" name="max_price" placeholder="Max" oninput="syncRangeMax()">
                 </div>
+                <div>
+                  <input type="range" class="form-control-range" id="priceRange" min="0" max="1000000" step="100">
+                </div>
+              </div>
 
-                <div class="rooms-container">
-                  <div>
-                    <label>Bedrooms</label>
-                    <select class="form-control" id="modal-bedrooms" name="bedrooms">
-                      <option>Any</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label>Bathrooms</label>
-                    <select class="form-control" id="modal-bathrooms" name="bathrooms">
-                      <option>Any</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4+</option>
-                    </select>
-                  </div>
+              <div class="rooms-container">
+                <div>
+                  <label>Bedrooms</label>
+                  <select class="form-control" id="modal-bedrooms" name="bedrooms">
+                    <option>Any</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                  </select>
                 </div>
+                <div>
+                  <label>Bathrooms</label>
+                  <select class="form-control" id="modal-bathrooms" name="bathrooms">
+                    <option>Any</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                  </select>
+                </div>
+              </div>
 
-                <div class="footer-buttons">
-                  <button type="button" class="btn btn-secondary" id="clear-filters">Clear all filters</button>
-                    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-                </div>
+              <div class="footer-buttons">
+                <button type="button" class="btn btn-secondary" id="clear-filters">Clear all filters</button>
+                  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+              </div>
               </div>
             </div>
           </div>
@@ -141,6 +140,7 @@
         $("#priceMax").val(ui.values[1]);
       }
     });
+
 
     document.getElementById('clear-filters').addEventListener('click', function() {
       document.getElementById('modal-bedrooms').value = 'Any';
