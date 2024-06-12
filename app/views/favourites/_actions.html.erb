@@ -1,10 +1,13 @@
 <% favourite = property.favourited_by(current_user) %>
-<% unless favourite %>
-  <%= link_to property_favourites_path(property), data: { turbo_method: "post" }, class: "pin" do %>
-    <i class="fa-regular fa-heart"></i>
+<div data-controller="favourite" data-favourite-property-id-value="<%= property.id %>"
+  data-favourite-user-id-value="<%= current_user.id %>">
+  <% unless favourite %>
+    <%= link_to property_favourites_path(property), data: { action: 'click->favourite#send', favourite_target: 'link' }, class: "pin" do %>
+      <i class="fa-regular fa-heart" data-favourite-target="icon"></i>
+    <% end %>
+  <% else %>
+    <%= link_to favourite_path(favourite), data: { action: 'click->favourite#send', favourite_target: 'link' }, class: "pin" do %>
+      <i class="fa-solid fa-heart" data-favourite-target="icon"></i>
+    <% end %>
   <% end %>
-<% else %>
-  <%= link_to favourite_path(favourite), data: { turbo_method: "delete" }, class: "pin" do %>
-    <i class="fa-solid fa-heart"></i>
-  <% end %>
-<% end %>
+</div>

@@ -68,6 +68,10 @@ class PropertiesController < ApplicationController
     redirect_to user_properties_path(@property)
   end
 
+  def favourite
+    binding.break
+  end
+
   private
 
   def property_params

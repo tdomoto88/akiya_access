@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   patch "/user_properties", to: "properties#update"
 
+  get '/properties/:id/favourite', to: "properties#favourite", as: 'property_favourite'
 end
 
 # HUGH'S CUSTOM ROUTES THAT I AM UNSURE WHETHER WE WILL KEEP
