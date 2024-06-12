@@ -29,16 +29,16 @@
                 <label>Property type</label>
                 <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
                   <label class="btn btn-outline-dark flex-fill text-dark">
-                    <input type="radio" name="property_type" id="any" autocomplete="off"> Any
+                    <input type="checkbox" name="property_type" id="any"> Any
                   </label>
                   <label class="btn btn-outline-dark flex-fill text-dark">
-                    <input type="radio" name="property_type_akiya" id="akiya" autocomplete="off"> Akiya
+                    <input type="checkbox" name="property_type_akiya" id="akiya"> Akiya
                   </label>
                   <label class="btn btn-outline-dark flex-fill text-dark">
-                    <input type="radio" name="property_type_machiya" id="machiya" autocomplete="off"> Machiya
+                    <input type="checkbox" name="property_type_machiya" id="machiya"> Machiya
                   </label>
                   <label class="btn btn-outline-dark flex-fill text-dark">
-                    <input type="radio" name="property_type_kominka" id="kominka" autocomplete="off"> Kominka
+                    <input type="checkbox" name="property_type_kominka" id="kominka"> Kominka
                   </label>
                 </div>
               </div>
@@ -109,55 +109,10 @@
 
 <!-- JavaScript to link the "Show" button with the "Search" button -->
 <script>
-  $(document).ready(function() {
-    var prefectures = [
-      "Hokkaido", "Aomori", "Iwate", "Miyagi", "Akita", "Yamagata", "Fukushima",
-      "Ibaraki", "Tochigi", "Gunma", "Saitama", "Chiba", "Tokyo", "Kanagawa",
-      "Niigata", "Toyama", "Ishikawa", "Fukui", "Yamanashi", "Nagano",
-      "Gifu", "Shizuoka", "Aichi", "Mie", "Shiga", "Kyoto", "Osaka", "Hyogo",
-      "Nara", "Wakayama", "Tottori", "Shimane", "Okayama", "Hiroshima", "Yamaguchi",
-      "Tokushima", "Kagawa", "Ehime", "Kochi", "Fukuoka", "Saga", "Nagasaki",
-      "Kumamoto", "Oita", "Miyazaki", "Kagoshima", "Okinawa"
-    ];
-
-    $("#prefecture-search").autocomplete({
-      source: prefectures,
-      minLength: 2
-    });
-
-    $("#priceRange").slider({
-      range: true,
-      min: 0,
-      max: 1000000,
-      step: 100,
-      values: [0, 1000000],
-      slide: function(event, ui) {
-        $("#priceMin").val(ui.values[0]);
-        $("#priceMax").val(ui.values[1]);
-      }
-    });
-
-
-    document.getElementById('clear-filters').addEventListener('click', function() {
-      document.getElementById('modal-bedrooms').value = 'Any';
-      document.getElementById('modal-bathrooms').value = 'Any';
-      document.getElementById('priceMin').value = '';
-      document.getElementById('priceMax').value = '';
-      $("#priceRange").slider("values", [0, 1000000]);
-    });
-
-    function syncRangeMin() {
-      const minInput = document.getElementById('priceMin').value;
-      $("#priceRange").slider("values", 0, minInput);
-    }
-
-    function syncRangeMax() {
-      const maxInput = document.getElementById('priceMax').value;
-      $("#priceRange").slider("values", 1, maxInput);
-    }
+  document.getElementById('clear-filters').addEventListener('click', function() {
+    document.getElementById('modal-bedrooms').value = 'Any';
+    document.getElementById('modal-bathrooms').value = 'Any';
+    document.getElementById('min_price').value = '';
+    document.getElementById('max_price').value = '';
   });
 </script>
-
-<!-- Include jQuery UI CSS and JS for the price range slider -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
