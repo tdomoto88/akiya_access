@@ -4,8 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['link', 'icon'];
   static values = {
-    propertyId: Number,
-    userId: Number
+    propertyId: Number
   }
 
   connect() {
