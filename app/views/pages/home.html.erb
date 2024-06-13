@@ -1,9 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Charset -->
+    <meta charset="UTF-8">
+
+    <!-- Title Tag -->
+    <title>Akiya Access - Invest in Japan's Abandoned Homes and Unlock Sustainable Living</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Akiya Access offers unique investment opportunities in Japan's abandoned homes. Learn how to invest in and revitalize these properties with our expert guidance.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="Akiya Access, Japan abandoned homes, invest in Japanese properties, sustainable living, real estate investment, eco-friendly homes, property revitalization">
+
+    <!-- Viewport for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Author -->
+    <meta name="author" content="Akiya Access">
+
+    <!-- Open Graph (OG) Tags for Social Media -->
+    <meta property="og:title" content="Akiya Access - Invest in Japan's Abandoned Homes and Unlock Sustainable Living">
+    <meta property="og:description" content="Akiya Access offers unique investment opportunities in Japan's abandoned homes. Learn how to invest in and revitalize these properties with our expert guidance.">
+    <meta property="og:image" content="URL_to_your_logo_or_featured_image">
+    <meta property="og:url" content="https://www.akiyaaccess.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Akiya Access">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Akiya Access - Invest in Japan's Abandoned Homes and Unlock Sustainable Living">
+    <meta name="twitter:description" content="Akiya Access offers unique investment opportunities in Japan's abandoned homes. Learn how to invest in and revitalize these properties with our expert guidance.">
+    <meta name="twitter:image" content="URL_to_your_logo_or_featured_image">
+    <meta name="twitter:site" content="@tydomo88">
+
+    <!-- LinkedIn Tags (Uses Open Graph Tags) -->
+    <meta property="og:title" content="Akiya Access - Invest in Japan's Abandoned Homes and Unlock Sustainable Living">
+    <meta property="og:description" content="Akiya Access offers unique investment opportunities in Japan's abandoned homes. Learn how to invest in and revitalize these properties with our expert guidance.">
+    <meta property="og:image" content="URL_to_your_logo_or_featured_image">
+    <meta property="og:url" content="https://www.akiyaaccess.com">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="URL_to_your_favicon" type="image/x-icon">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
+    <!-- Your website content goes here -->
+<body>
 <div class="overlay-container">
   <div class="title-home">
     <h1 id="enlarged-text" class="text-center">空き家<br>アクセス</h1>
@@ -63,8 +112,8 @@
                     <img src="<%= property.image_urls.first %>" alt="" class="d-block img" width="350" height="300">
                     <br>
                     <br>
-                    <p class="text-center"><%= property.city %>, <%= property.prefecture %></p>
-                    <p class="property-info text-center"><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></p>
+                    <p class="text-center"><strong><%= property.city %>, <%= property.prefecture %></strong></p>
+                    <p class="property-info text-center mb-3"><strong><%= "#{property.bedrooms} bedrooms | #{number_to_currency(property.price)}" %></strong></p>
                     <br>
                   </a>
                 </div>
@@ -84,3 +133,5 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</body>
+</html>

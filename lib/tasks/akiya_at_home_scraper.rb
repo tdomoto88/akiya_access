@@ -27,8 +27,25 @@ class AkiyaAtHomeScraper
 
     properties
   end
-
+  
   private
+
+  def self.extract_city(text)
+    text.downcase!
+      if text.include?("city")
+        extract(text, "city")
+      elsif text.include?("town")
+        extract(text, "town")
+      elsif text.include?("village")
+        extract(text, "village")
+      else
+        text
+      end
+  end
+
+  def self.extract_prefecture(text)
+    extract(text, "prefecture")
+  end
 
   def self.scrape_page(html)
     doc = Nokogiri::HTML.parse(html)

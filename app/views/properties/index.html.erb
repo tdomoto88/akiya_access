@@ -4,43 +4,80 @@
   <!-- Left Column with Search Bar and Property Cards -->
   <div class="col-7">
     <!-- Search Bar -->
-    <%= form_with url: properties_path, method: :get, class: "d-flex mb-3" do %>
-      <div class="col-md-3">
-        <%= text_field_tag :query, params[:query], class: "form-control rounded-pill", placeholder: "Search by Prefecture" %>
-      </div>
-      <div class="col-md-2">
-        <%= number_field_tag :bedrooms, params[:bedrooms], class: "form-control rounded-pill", placeholder: "Bedrooms" %>
-      </div>
-      <div class="col-md-2">
-        <%= number_field_tag :min_price, params[:min_price], class: "form-control rounded-pill", placeholder: "Min Price" %>
-      </div>
-      <div class="col-md-2">
-        <%= number_field_tag :max_price, params[:max_price], class: "form-control rounded-pill", placeholder: "Max Price" %>
+    <%= form_with url: properties_path, method: :get, class: "d-flex mb-3", id: "search-form" do %>
+      <div class="col-md-6">
+        <%= text_field_tag :query, params[:query], class: "form-control rounded-pill", placeholder: "Search by Prefecture", id: "prefecture-search" %>
       </div>
       <div class="col-md-3">
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
           Filter
         </button>
       </div>
 
-
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Filters</h1>
+              <h1 class="modal-title fs-5" id="filterModalLabel">Filters</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <label for="customRange1" class="form-label">Price range</label>
-              <input type="range" class="form-range" id="min_price" name="min_price">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Show</button>
+              <div class="property-type my-3">
+                <label>Property type</label>
+                <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="checkbox" name="property_type" id="any"> Any
+                  </label>
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="checkbox" name="property_type_akiya" id="akiya"> Akiya
+                  </label>
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="checkbox" name="property_type_machiya" id="machiya"> Machiya
+                  </label>
+                  <label class="btn btn-outline-dark flex-fill text-dark">
+                    <input type="checkbox" name="property_type_kominka" id="kominka"> Kominka
+                  </label>
+                </div>
+              </div>
+
+              <div class="price-range">
+                <label>Price range</label>
+                <div class="price-inputs">
+                  <input type="text" class="form-control" id="min_price" name="min_price" placeholder="Min" oninput="syncRangeMin()">
+                  <input type="text" class="form-control" id="max_price" name="max_price" placeholder="Max" oninput="syncRangeMax()">
+                </div>
+              </div>
+
+              <div class="rooms-container">
+                <div>
+                  <label>Bedrooms</label>
+                  <select class="form-control" id="modal-bedrooms" name="bedrooms">
+                    <option>Any</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Bathrooms</label>
+                  <select class="form-control" id="modal-bathrooms" name="bathrooms">
+                    <option>Any</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="footer-buttons">
+                <button type="button" class="btn btn-secondary" id="clear-filters">Clear all filters</button>
+                  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+              </div>
             </div>
           </div>
         </div>
@@ -69,3 +106,13 @@
     </div>
   </div> <!-- Close Right Column -->
 </div> <!-- Close Row -->
+
+<!-- JavaScript to link the "Show" button with the "Search" button -->
+<script>
+  document.getElementById('clear-filters').addEventListener('click', function() {
+    document.getElementById('modal-bedrooms').value = 'Any';
+    document.getElementById('modal-bathrooms').value = 'Any';
+    document.getElementById('min_price').value = '';
+    document.getElementById('max_price').value = '';
+  });
+</script>

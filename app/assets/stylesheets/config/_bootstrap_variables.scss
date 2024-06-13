@@ -29,6 +29,11 @@ $border-radius-xxl:           1rem;
 
 $carousel-transition-duration:       0.8s;
 $carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+$carousel-control-color:             black;
+$carousel-control-width:             8%;
+$carousel-control-opacity:           1;
+$carousel-control-hover-opacity:     .9;
+
 
 // override form
 $input-color: $black;

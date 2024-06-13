@@ -8,6 +8,10 @@ serialized_properties = File.read(filepath)
 properties = JSON.parse(serialized_properties)['results']['listings']
 
 scraper = User.create!(first_name: "Scrape", last_name: "Scrapey", email: "scrape@gmail.com", password: "123456", is_owner: true)
+User.create!(first_name: "Hugh", last_name: "Clayton", email: "hughgrassbyclayton@hotmail.com", password: "123456", is_owner: false)
+User.create!(first_name: "Tsuyoshi", last_name: "Domoto", email: "tdomoto88@gmail.com", password: "123456", is_owner: false)
+User.create!(first_name: "Lance", last_name: "Masina", email: "lance@lancemasina.com", password: "123456", is_owner: false)
+User.create!(first_name: "Xavier", last_name: "Ropero", email: "xavier.ropero@gmail.com", password: "123456", is_owner: false)
 
 properties.each do |property|
   url = "https://www.akiya-mart.com/listings/id/#{property['listing_id']}?currency=usd"
@@ -21,8 +25,8 @@ properties.each do |property|
   latitude: details['lat'],
   longitude: details['lon'],
   city: Geocoder.search([details['lat'], details['lon']]).first.city,
-  bedrooms: 4,
-  bathrooms: 2,
+  bedrooms: rand(1..6),
+  bathrooms: rand(1..3),
   description: details['llm_description'],
   size_building: details['building_area'].to_i,
   size_land: details['land_area'].to_i,
