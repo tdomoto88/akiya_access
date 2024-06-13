@@ -77,8 +77,21 @@ p, .text-dark {
   justify-content: center; /* Center the buttons horizontally */
   width: 100%; /* Ensure the container takes up the full width */
 }
+.login-button{
+background-color: none;
+padding: 10px; /* 15px padding */
+margin: 10px; /* 10px margin */
+border-radius: 5px; /* Rounded corners */
+color: white; /* White text */
+text-align: center; /* Centered text */
+text-decoration: none; /* Remove underline */
+display: inline-block; /* Make the link look like a button */
+font-size: 14px; /* Adjust font size as needed */
+cursor: pointer; /* Pointer/hand icon */
+align-items: right;
+}
 
-.signup-button, .login-button {
+.signup-button {
   background-color: black; /* Black background */
   padding: 10px; /* 15px padding */
   margin: 10px; /* 10px margin */
