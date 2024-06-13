@@ -5,7 +5,7 @@
       <% @properties.each do |property| %>
         <div class="card-search-result">
           <a href="<%= property_path(property)%>" class="card-link">
-            <img src="<%= property.image_urls.first %>" alt="" class="d-block" width="238" height="240" unless property.photos.first.nil?>
+            <img src="<%= property.image_urls.second %>" alt="" class="d-block" width="238" height="240" unless property.photos.first.nil?>
             <div class="d-flex justify-content-end w-100">
             <%= link_to edit_property_path(property) do %>
               <i class="fa-solid fa-pen-to-square search_edit_delete"></i>
