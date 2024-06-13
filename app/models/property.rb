@@ -34,6 +34,7 @@ class Property < ApplicationRecord
   #     longitude = lat_long.last
   #   end
   # end
+  #
 
 
   def favourited_by(user)
