@@ -80,6 +80,8 @@ class PropertiesController < ApplicationController
     redirect_to user_properties_path(@property)
   end
 
+
+
   private
 
   def property_params

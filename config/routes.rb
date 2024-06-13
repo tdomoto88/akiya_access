@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   patch "/user_properties", to: "properties#update"
 
+  post '/favourites/:property_id', to: "favourites#create"
+  delete '/favourites/:id', to: "favourites#destroy"
 end
 
 # HUGH'S CUSTOM ROUTES THAT I AM UNSURE WHETHER WE WILL KEEP

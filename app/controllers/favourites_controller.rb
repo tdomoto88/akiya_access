@@ -20,7 +20,7 @@ class FavouritesController < ApplicationController
     favourite.property = property
     favourite.user = current_user
     if favourite.save
-      redirect_to request.referer
+      redirect_to properties_path
     else
       @properties = Property.all
       p favourite.errors.messages
@@ -29,8 +29,10 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = Favourite.find(params[:id])
+    favourite = Property.find(params[:id]).favourited_by(current_user)
     favourite.destroy
-    redirect_to request.referer
+    # redirect_to request.referer
+    redirect_to properties_path
   end
+
 end
