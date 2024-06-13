@@ -87,7 +87,7 @@ class AkiyaAtHomeScraper
 
 
 
-      Property.create!(
+      new_property = Property.create!(
         photo_url: photo_url,
         price: price_usd,
         bedrooms: bedrooms,
@@ -102,6 +102,7 @@ class AkiyaAtHomeScraper
         property_type: "Akiya",
         user: akiya_at_home_scraper
       )
+      Image.create(url: photo_url, property: new_property)
     end
 
     properties
