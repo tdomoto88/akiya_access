@@ -27,7 +27,7 @@ class AkiyaAtHomeScraper
 
     properties
   end
-  
+
   private
 
   def self.extract_city(text)
@@ -77,7 +77,15 @@ class AkiyaAtHomeScraper
       city = extract_city(address).capitalize
       prefecture = extract_prefecture(address).capitalize
 
-      akiya_at_home_scraper = User.create!(first_name: "Scrappy", last_name: "Scrap", email: "AAH@gmail.com", password: "123456", is_owner: true)
+      akiya_at_home_scraper = nil
+      begin
+        akiya_at_home_scraper = User.create!(first_name: "Scrappy", last_name: "Scrap", email: "aah@gmail.com", password: "123456", is_owner: true)
+      rescue
+        akiya_at_home_scraper = User.find_by(email: "aah@gmail.com")
+      end
+      # p akiya_at_home_scraper
+
+
 
       Property.create!(
         photo_url: photo_url,
@@ -95,7 +103,12 @@ class AkiyaAtHomeScraper
         user: akiya_at_home_scraper
       )
     end
+
+    properties
+
   end
+
+  private
 
   def self.translate(text, from, to)
     EasyTranslate.api_key = "AIzaSyDd8pRatE4c1BvOrjo9xxDrkwHHm0izakk"
