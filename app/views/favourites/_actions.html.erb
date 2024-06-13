@@ -1,13 +1,15 @@
-<% favourite = property.favourited_by(current_user) %>
-<div data-controller="favourite" data-favourite-property-id-value="<%= property.id %>"
-  data-favourite-user-id-value="<%= current_user.id %>">
-  <% unless favourite %>
-    <%= link_to property_favourites_path(property), data: { action: 'click->favourite#send', favourite_target: 'link' }, class: "pin" do %>
-      <i class="fa-regular fa-heart" data-favourite-target="icon"></i>
+<% unless property.user == current_user %>
+  <% favourite = property.favourited_by(current_user) %>
+  <div data-controller="favourite" data-favourite-property-id-value="<%= property.id %>"
+    data-favourite-user-id-value="<%= current_user.id %>">
+    <% unless favourite %>
+      <%= link_to property_favourites_path(property), data: { action: 'click->favourite#send', favourite_target: 'link' }, class: "pin" do %>
+        <i class="fa-regular fa-heart" data-favourite-target="icon"></i>
+      <% end %>
+    <% else %>
+      <%= link_to favourite_path(favourite), data: { action: 'click->favourite#send', favourite_target: 'link' }, class: "pin" do %>
+        <i class="fa-solid fa-heart" data-favourite-target="icon"></i>
+      <% end %>
     <% end %>
-  <% else %>
-    <%= link_to favourite_path(favourite), data: { action: 'click->favourite#send', favourite_target: 'link' }, class: "pin" do %>
-      <i class="fa-solid fa-heart" data-favourite-target="icon"></i>
-    <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>

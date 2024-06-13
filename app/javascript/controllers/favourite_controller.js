@@ -18,10 +18,22 @@ export default class extends Controller {
     console.log(this.propertyIdValue);
     console.log(this.iconTarget);
 
-    fetch(`/properties/${this.propertyIdValue}/favourite?user_id=${this.userIdValue}`, {
-      method: "GET",
-    });
 
-
+    const favourite = this.iconTarget.classList.contains("fa-solid")
+    if (favourite) {
+      fetch(`/favourites/${this.propertyIdValue}`, {
+        method: "DELETE",
+        headers: {"X-CSRF-Token": document.head.querySelector("meta[name=csrf-token]")?.content}
+      });
+      this.iconTarget.classList.remove("fa-solid")
+      this.iconTarget.classList.add("fa-regular");
+    } else {
+      fetch(`/favourites/${this.propertyIdValue}`, {
+        method: "POST",
+        headers: {"X-CSRF-Token": document.head.querySelector("meta[name=csrf-token]")?.content}
+      });
+      this.iconTarget.classList.remove("fa-regular")
+      this.iconTarget.classList.add("fa-solid");
+    }
   }
 }
