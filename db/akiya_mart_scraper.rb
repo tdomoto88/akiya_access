@@ -1,7 +1,7 @@
 require "json"
 require "open-uri"
 
-start_index = ENV["START_INDEX"] || 0
+start_index = ENV["START_INDEX"].to_i || 0
 
 filepath = File.join(__dir__, "properties.json")
 
