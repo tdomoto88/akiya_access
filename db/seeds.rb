@@ -9,10 +9,10 @@
 #   end
 
 puts "Cleaning database..."
-Favourite.destroy_all
-Image.destroy_all
-Property.destroy_all
-User.destroy_all
+# Favourite.destroy_all
+# Image.destroy_all
+# Property.destroy_all
+# User.destroy_all
 require_relative 'akiya_mart_scraper.rb'
 exit
 puts "Creating users..."

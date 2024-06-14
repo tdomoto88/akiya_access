@@ -9,11 +9,7 @@ serialized_properties = File.read(filepath)
 
 properties = JSON.parse(serialized_properties)['results']['listings']
 
-scraper = User.create!(first_name: "Scrape", last_name: "Scrapey", email: "scrape@gmail.com", password: "123456", is_owner: true)
-User.create!(first_name: "Hugh", last_name: "Clayton", email: "hughgrassbyclayton@hotmail.com", password: "123456", is_owner: false)
-User.create!(first_name: "Tsuyoshi", last_name: "Domoto", email: "tdomoto88@gmail.com", password: "123456", is_owner: false)
-User.create!(first_name: "Lance", last_name: "Masina", email: "lance@lancemasina.com", password: "123456", is_owner: false)
-User.create!(first_name: "Xavier", last_name: "Ropero", email: "xavier.ropero@gmail.com", password: "123456", is_owner: false)
+scraper = User.find_by(email: "scrape@gmail.com")
 puts properties.count
 properties_skipped = 0
 
