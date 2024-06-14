@@ -1,6 +1,8 @@
 require "json"
 require "open-uri"
 
+start_index = ENV["START_INDEX"] || 0
+
 filepath = File.join(__dir__, "properties.json")
 
 serialized_properties = File.read(filepath)
@@ -14,7 +16,8 @@ User.create!(first_name: "Lance", last_name: "Masina", email: "lance@lancemasina
 User.create!(first_name: "Xavier", last_name: "Ropero", email: "xavier.ropero@gmail.com", password: "123456", is_owner: false)
 puts properties.count
 properties_skipped = 0
-properties.each_with_index do |property, index|
+
+properties[start_index..].each_with_index do |property, index|
   puts index
   url = "https://www.akiya-mart.com/listings/id/#{property['listing_id']}?currency=usd"
   serialized_details = URI.open(url).read
@@ -28,39 +31,31 @@ properties.each_with_index do |property, index|
     next
   end
 
-  new_property = Property.new(age: property['construction_year'],
-  prefecture: property['prefecture'].capitalize,
-  price: property['price_foreign'],
-  address: property['translated_address'],
-  latitude: details['lat'],
-  longitude: details['lon'],
-  city: geocoded_city.first.city,
-  bedrooms: rand(1..6),
-  bathrooms: rand(1..3),
-  description: details['llm_description'],
-  size_building: details['building_area'].to_i,
-  size_land: details['land_area'].to_i,
-  views: 0,
-  property_type: 'Akiya',
-  user: scraper)
+  new_property = Property.new(
+    age: property['construction_year'],
+    prefecture: property['prefecture'].capitalize,
+    price: property['price_foreign'],
+    address: property['translated_address'],
+    latitude: details['lat'],
+    longitude: details['lon'],
+    city: geocoded_city.first.city,
+    bedrooms: rand(1..6),
+    bathrooms: rand(1..3),
+    description: details['llm_description'],
+    size_building: details['building_area'].to_i,
+    size_land: details['land_area'].to_i,
+    views: 0,
+    property_type: 'Akiya',
+    user: scraper
+  )
   new_property.save!
   property['image_urls'].each do |url|
     Image.create(url: url, property: new_property)
   end
-  if index % 29 == 0
-    5.times do |i|
-      puts "waiting #{i} seconds"
-      sleep(1)
-    end
-  else
-    sleep(1)
-  end
+  sleep(3)
 end
 
 puts "properties skipped: #{properties_skipped}"
-
-
-
 
 # curl = "https://www.allakiyas.com/properties.php?location=Kyoto+Fu&for-sale=on&building-type=&display_style=list&sort_by="
 
