@@ -14,7 +14,7 @@ puts properties.count
 properties_skipped = 0
 
 properties[start_index..].each_with_index do |property, index|
-  puts index
+  puts index + start_index
   url = "https://www.akiya-mart.com/listings/id/#{property['listing_id']}?currency=usd"
   serialized_details = URI.open(url).read
   details = JSON.parse(serialized_details)['results']
