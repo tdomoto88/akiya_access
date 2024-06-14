@@ -47,8 +47,14 @@ properties.each_with_index do |property, index|
   property['image_urls'].each do |url|
     Image.create(url: url, property: new_property)
   end
-  sleep(1)
-end
+  if index % 29 == 0
+    5.times do |i|
+      puts "waiting #{i} seconds"
+      sleep(1)
+    end
+  else
+    sleep(1)
+  end
 
 puts "properties skipped: #{properties_skipped}"
 
