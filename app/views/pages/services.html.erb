@@ -32,7 +32,7 @@
     <div class="price">Upon request<br></div>
     <p class="mb-2">Everything included in Standard Package, plus...</p>
     <div class="accordion accordion-flush" id="accordionFlushPremium">
-      <% @plans[:standard].each_with_index do |service, index| %>
+      <% @plans[:premium].each_with_index do |service, index| %>
         <%= render 'shared/accordion_item', title: service[:title], content: service[:content], index: index, plan: "Premium" %>
       <% end %>
     </div>
