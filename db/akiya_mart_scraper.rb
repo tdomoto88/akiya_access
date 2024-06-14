@@ -55,6 +55,7 @@ properties.each_with_index do |property, index|
   else
     sleep(1)
   end
+end
 
 puts "properties skipped: #{properties_skipped}"
 
